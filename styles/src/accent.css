@@ -6,7 +6,7 @@
 .theme_background_dark { background-color: #{DARK_COLOUR}; color: #ffffff; }
 .theme_background a { color: #ffffff; }
 
-#sidebar ul li.bullets ul li span.arrow,
+#sidebar ul li ul li span.arrow,
 #searchform div span { background-color: #{COLOUR}; }
 
 #masthead,

@@ -56,11 +56,15 @@
 	$css_output .= str_replace(
 		array(
 			"{COLOUR}",
-			"{DARK_COLOUR}"
+			"{DARK_COLOUR}",
+			"{TEMPLATE_PATH}",
+			"{THEME_COLOUR}"
 		),
 		array(
 			$colour,
-			$dark_colour
+			$dark_colour,
+			$template_path,
+			$theme
 		), $accent_css
 	);
 

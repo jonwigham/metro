@@ -36,6 +36,7 @@
 
 	<script type="text/JavaScript" src="<?php bloginfo("template_url"); ?>/scripts/scripts.php"></script>
 	<script type="text/JavaScript" src="https://s7.addthis.com/js/300/addthis_widget.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
 
 <?php
 	if (is_singular() && get_option('thread_comments')) wp_enqueue_script("comment-reply");

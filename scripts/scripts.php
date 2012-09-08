@@ -5,3 +5,4 @@
 
 	require_once("src/main.js");
 	require_once("src/addThis.js");
+	require_once("src/menu.js");

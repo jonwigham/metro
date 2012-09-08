@@ -8,6 +8,10 @@
 // Metro options
 require_once(get_template_directory() . "/theme-options.php");
 
+// Load up the widgets
+require_once("theme-widgets.php");
+
+
 // Tell WordPress to run metro_setup() when the 'after_setup_theme' hook is run
 add_action("after_setup_theme", "metro_setup");
 
@@ -46,8 +50,8 @@ function metro_widgets_init() {
 		"description" => "The primary widget area",
 		"before_widget" => '<li id="%1$s" class="widget-container %2$s">',
 		"after_widget" => "</li>",
-		"before_title" => '<h3 class="widget-title">',
-		"after_title" => "</h3>",
+		"before_title" => '<h4 class="widget-title">',
+		"after_title" => "</h4>",
 	) );
 }
 /** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
