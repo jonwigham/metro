@@ -94,5 +94,5 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7a { color: #<?php echo $font_colour; ?>; }
 .entry-meta img.avatar,
 .post blockquote,
 #sidebar #categories ul li a:hover,
-input,
+#searchform input,
 #social { border-color: #<?php echo $colour; ?>; }
