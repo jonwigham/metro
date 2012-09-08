@@ -21,7 +21,7 @@
 	{
 		$theme_colour = "dark";
 		$font_colour = "ffffff";
-		$secondary_font_colour = "888888";
+		$secondary_font_colour = "676767";
 		$bg_colour = "232323";
 	}
 	else
@@ -39,6 +39,8 @@ body {
 	}
 
 #site-title a,
+.post pre,
+#comments h3#reply-title,
 .secondary-color { color: #<?php echo $secondary_font_colour; ?>; }
 
 #site-title li.item_active a { color: #<?php echo $font_colour; ?>; }

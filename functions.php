@@ -364,7 +364,7 @@ function metro_comment_form($form_options)
 
 	$user = wp_get_current_user();
 	$user_identity = ! empty( $user->ID ) ? $user->display_name : '';
-	$logged_in_as  = '<p class="logged-in-as">';
+	$logged_in_as  = '<p class="logged-in-as secondary-color">';
 	$logged_in_as .= sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'), admin_url("profile.php"), $user_identity, wp_logout_url(apply_filters("the_permalink", get_permalink($post_id))));
 	$logged_in_as .= '</p>';
 
