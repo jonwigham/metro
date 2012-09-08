@@ -1,0 +1,85 @@
+/* =Widget Areas
+-------------------------------------------------------------- */
+
+#sidebar {
+	margin-top: -1px;
+	}
+
+	#sidebar ul li {
+		margin-bottom: 20px;
+		}
+
+		#sidebar ul li.last {
+			margin-bottom: 0;
+			}
+
+		#sidebar ul li ul li {
+			margin-bottom: 10px;
+			}
+
+		#sidebar ul li.bullets ul li span {
+			display: block;
+			padding-left: 20px;
+			}
+
+		#sidebar ul li.bullets ul li span.arrow {
+			float: left;
+			width: 15px;
+			height: 15px;
+			margin: 2px 0 0 0;
+			padding: 0;
+			}
+
+
+/* Search form */
+#searchform div input {
+	float: left;
+	}
+
+	#searchform div input#s {
+		width: 200px;
+		}
+
+	#searchform div span {
+		display: block;
+		float: left;
+		width: 21px;	
+		height: 21px;
+		margin-left: 5px;
+		}
+
+
+/* Boxes for the categories */
+#sidebar #categories {
+	border-bottom: 1px solid transparent;
+	}
+
+	#sidebar #categories ul {
+		margin: 0;
+		padding: 0;
+		}
+
+		#sidebar #categories ul li {
+			float: left;
+			margin: 0 10px 10px 0;
+			}
+
+		#sidebar #categories ul li a {
+			display: block;
+			width: 80px;
+			height: 80px;
+			position: relative;
+			font-size: 12px;
+			}
+
+			#sidebar #categories ul li a:hover {
+				text-decoration: none;
+				}
+
+		#sidebar #categories ul li a span {
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+			display: block;
+			}
+

@@ -1,0 +1,52 @@
+/* =Comments
+-------------------------------------------------------------- */
+
+#comments {
+	width: 540px;
+	}
+
+#comments .navigation .nav-previous {
+	float: left;
+	}
+
+#comments .navigation .nav-next {
+	float: right;
+	}
+
+#comments li.comment,
+#comments li.pingback {
+	margin-bottom: 10px;
+	margin-right: 60px;
+	}
+
+	#comments li.comment.byuser {
+		margin: 20px 0 10px 60px;
+		}
+
+	#comments li.comment div.comment,
+	#comments li.pingback div.comment {
+		padding: 10px;
+		}
+
+	#comments .comment-author {
+		float: left;
+		margin: 0 10px 10px 0;
+		}
+
+	#comments .comment-meta {
+		text-align: right;
+		}
+
+
+#comments_form {
+	background-color: #cecece;
+	padding: 10px;
+	}
+
+	#comments_form form p {
+		padding: 0;
+		}
+
+	#comments_form form input {
+		margin-bottom: 5px;
+		}

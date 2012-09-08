@@ -1,0 +1,78 @@
+/* =Content
+-------------------------------------------------------------- */
+
+.post {
+	width: 540px;
+	float: left;
+	}
+
+	.post blockquote {
+		border-left: 10px solid #ffffff;
+		padding-left: 10px;
+		margin-bottom: 15px;
+		}
+
+		.post blockquote p {
+			padding-bottom: 0;
+			}
+
+.comments-callout {
+	float: left;
+	width: 40px;
+	height: 50px;
+	}
+
+	.comments-callout a {
+		display: block;
+		padding: 20px 0 5px 5px;
+		font-size: 12px;
+		}
+
+		.comments-callout a:hover {
+			text-decoration: none;
+			}
+
+
+
+.entry-meta {}
+
+	.entry-meta img.avatar {
+		border: 1px solid #ffffff;
+		float: left;
+		}
+
+	.entry-meta p {
+		padding-left: 50px;
+		}
+
+.post_options {
+	background: #dedede url("/wp-content/themes/metro/images/post_options/elipsis.png") no-repeat 97% 10px;
+	padding: 5px;
+	cursor: pointer;
+	}
+
+	.post_options .social .addthis_toolbox {
+		text-align: center;
+		}
+
+		.post_options .social .addthis_toolbox li {
+			display: inline-block;
+			}
+
+			.post_options .social .addthis_toolbox li a {
+				font-size: 10px;
+				color: #a4a4a4;
+				}
+				.post_options .social .addthis_toolbox li a span {
+					display: none;
+					}
+				.post_options.open .social .addthis_toolbox li a span {
+					display: block;
+					}
+
+			.post_options .social .addthis_toolbox li img {
+				vertical-align: bottom;
+				margin: 0 20px;
+				}
+
+

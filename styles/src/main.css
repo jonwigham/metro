@@ -1,0 +1,43 @@
+/* =Layout
+-------------------------------------------------------------- */
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	}
+
+#main {
+	margin: 0 30px;
+	}
+
+#container {
+	width: 620px;
+	float: left;
+	}
+
+#sidebar {
+	width: 280px;
+	float: right;
+	}
+
+#content {
+	padding: 0 10px 10px 10px;
+	}
+
+
+.callout span.arrow {
+	display: block;
+	margin-left: 21px; 
+	}
+
+	.callout span.arrow img {
+		display: block;
+		margin-left: -21px;
+		}
+
+
+.callout.bottom-right {
+	float: right;
+	margin-right: 0;
+	}
+

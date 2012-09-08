@@ -1,0 +1,83 @@
+/* =Header
+-------------------------------------------------------------- */
+
+#header {}
+
+	#social_login {
+		height: 50px;
+		margin: 0 30px;
+		float: right;
+		}
+
+	#login {
+		float: right;
+		}
+
+	#social {
+		float: right;
+		border-right: 10px solid #ffffff;
+		margin-right: 10px;
+		}
+
+			#social ul {
+				margin: 0 5px 0 0;
+				}
+
+				#social ul li {
+					float: left;
+					margin: 6px 5px 7px 5px;
+					}
+
+					#social ul li img {
+						float: left;
+						}
+
+		#social_login .text {
+			padding: 7px 15px;
+			float: left;
+			text-align: right;
+			}
+
+		#social_login .image {
+			float: right;
+			width: 40px;
+			height: 40px;
+			padding: 5px;
+			}
+
+			#social_login .image img {
+				float: left;
+				}
+
+	#masthead {
+		border-left: 30px solid #ffffff;
+		margin-right: 30px;
+		padding-bottom: 50px;
+		margin-bottom: -47px;
+		}
+
+	#branding {
+		padding: 0 10px 10px 10px;
+		}
+
+	#site-description {
+		padding: 0;
+		}
+
+	#site-title {
+		font-size: 40px;
+		}
+
+		#site-title li {
+			float: left;
+			margin-right: 40px;
+			text-transform: lowercase;
+			}
+
+			#site-title li.item_active {
+				text-transform: none;
+				}
+
+			#site-title li.last {
+				margin-right: 0;
+				}

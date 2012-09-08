@@ -1,0 +1,64 @@
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	}
+
+h1, h2, h3, h4, h5, h6 { clear: both; font-weight: normal; }
+
+ol, ul { list-style: none; }
+
+p, ul, ol { padding-bottom: 15px; }
+.last { padding-bottom: 0;}
+.align_center { text-align: center; }
+
+blockquote { quotes: none; }
+	blockquote:before, blockquote:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+	table td { margin: 0; padding: 0; }
+
+a img { border: none; }
+
+input { border: 1px solid #ededed; }
+	input.submit { border: none; }
+
+
+/* =Fonts
+-------------------------------------------------------------- */
+body {
+	font-family: "Segoe UI", "Helvetica", Garuda, Arial, sans-serif;
+	font-size: 14px;
+	}
+
+a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6, h7 { font-family: "Segoe UI Light"; padding-bottom: 10px; }
+
+h1 { font-size: 40px; }
+h2 { font-size: 16px; text-transform: uppercase; font-weight: bold; }
+h3 { font-size: 25px; }
+h4 { font-size: 16px; font-weight: bold; }
+
+.padding_10 { line-height: 10px; height: 10px; }
+.padding_20 { line-height: 10px; height: 20px; }
+.padding_30 { line-height: 10px; height: 30px; }
+.padding_40 { line-height: 10px; height: 40px; }
+
+.clear { line-height: 0; height: 0; clear: both; }
+
+.hidden { display: none; }
