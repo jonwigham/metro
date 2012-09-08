@@ -29,19 +29,12 @@
 	</title>
 
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("stylesheet_url"); ?>" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/styles/styles.php?theme=<?php echo $metro_options["css_theme"]; ?>&amp;accent=<?php echo $metro_options["css_accent_colour"]; ?>" />
 
-	<script type="text/JavaScript" src="<?php bloginfo("template_url"); ?>/scripts/main.js"></script>
-	<script type="text/JavaScript" src="<?php bloginfo("template_url"); ?>/scripts/addThis.js"></script>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-	<script type="text/JavaScript">
-	/* <![CDATA[ */
-	var addthis_config = { data_track_clickback: false, ui_use_css: false };
-	/* ]]> */
-	</script>
+	<script type="text/JavaScript" src="<?php bloginfo("template_url"); ?>/scripts/scripts.php"></script>
 
 <?php
 	if (is_singular() && get_option('thread_comments')) wp_enqueue_script("comment-reply");

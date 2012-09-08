@@ -1,4 +1,4 @@
-// JavaScript Document
+// Main
 
 function addOnLoad(fn, args)
 {
