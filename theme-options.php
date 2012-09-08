@@ -127,26 +127,14 @@ function metro_options_validate($input)
 {
 	global $select_options, $radio_options;
 
-	// Our checkbox value is either 0 or 1
-	if (!isset($input["option1"]))
-	$input['option1'] = null;
-	$input['option1'] = ( $input['option1'] == 1 ? 1 : 0 );
+	$input["twitter_id"] = wp_filter_nohtml_kses($input["twitter_id"]);
+	$input["flicker_id"] = wp_filter_nohtml_kses($input["flicker_id"]);
+	$input["youtube_id"] = wp_filter_nohtml_kses($input["youtube_id"]);
+	$input["github_id"] = wp_filter_nohtml_kses($input["github_id"]);
+	$input["fb_url"] = wp_filter_nohtml_kses($input["fb_url"]);
+	$input["linkedin_url"] = wp_filter_nohtml_kses($input["linkedin_url"]);
 
-	// Say our text option must be safe text with no HTML tags
-	$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
-
-	// Our select option must actually be in our array of select options
-	if ( ! array_key_exists( $input['selectinput'], $select_options ) )
-	$input['selectinput'] = null;
-
-	// Our radio option must actually be in our array of radio options
-	if ( ! isset( $input['radioinput'] ) )
-	$input['radioinput'] = null;
-	if ( ! array_key_exists( $input['radioinput'], $radio_options ) )
-	$input['radioinput'] = null;
-
-	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
+	$input["css_accent_colour"] = wp_filter_nohtml_kses($input["css_accent_colour"]);
 
 	return $input;
 }
