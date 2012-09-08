@@ -16,6 +16,7 @@
 	/**
 	 * Theme
 	 */
+	$template_path = str_replace("/styles/styles.php", "", $_SERVER["PHP_SELF"]);
 	$theme = (in_array($_GET["theme"], array("light", "dark"))) ? $_GET["theme"] : "light";
 	if ($theme == "dark")
 	{
@@ -54,7 +55,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7a { color: #<?php echo $font_colour; ?>; }
 
 .callout span.arrow { background-color: #<?php echo $bg_colour; ?>; }
 
-#sidebar ul li.bullets ul li span.arrow { background-image: url("/wp-content/themes/metro/images/themes/<?php echo $theme_colour; ?>/arrow.png"); }
+#sidebar ul li.bullets ul li span.arrow { background-image: url("<?php echo $template_path; ?>/images/themes/<?php echo $theme_colour; ?>/arrow.png"); }
 
 #sidebar #categories ul li a { border: 1px solid #<?php echo $bg_colour; ?>; }
 

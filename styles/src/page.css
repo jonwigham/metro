@@ -85,4 +85,20 @@
 				margin: 0 20px;
 				}
 
+#entry-author-info {
+	border-bottom: 1px solid #888888;
+	}
 
+	#author-avatar {
+		float: left;
+		width: 60px;
+		margin: 10px;
+		}
+
+		#author-avatar h2 {
+			text-align: center;
+			}
+
+	#author-description {
+		padding-top: 20px;
+		}

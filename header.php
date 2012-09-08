@@ -1,11 +1,11 @@
 <?php
-	/**
-	 * The Header for our theme.
-	 *
-	 * @package WordPress
-	 * @subpackage Metro
-	 * @since Metro 1.0
-	 */
+/**
+ * The Header for our theme.
+ *
+ * @package WordPress
+ * @subpackage Metro
+ * @since Metro 1.0
+ */
 	$metro_options = get_option("metro_theme_options");
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -35,6 +35,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/styles/styles.php?theme=<?php echo $metro_options["css_theme"]; ?>&amp;accent=<?php echo $metro_options["css_accent_colour"]; ?>" />
 
 	<script type="text/JavaScript" src="<?php bloginfo("template_url"); ?>/scripts/scripts.php"></script>
+	<script type="text/JavaScript" src="https://s7.addthis.com/js/300/addthis_widget.js"></script>
 
 <?php
 	if (is_singular() && get_option('thread_comments')) wp_enqueue_script("comment-reply");
