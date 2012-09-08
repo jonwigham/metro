@@ -48,6 +48,7 @@
 .post_options {
 	margin-top: 10px;
 	background: #dedede url("/wp-content/themes/metro/images/post_options/elipsis.png") no-repeat 97% 10px;
+	background-image: none;
 	padding: 5px;
 	cursor: pointer;
 	}

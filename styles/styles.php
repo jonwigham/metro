@@ -8,8 +8,7 @@
 	require_once("src/sidebar.css");
 	require_once("src/page.css");
 	require_once("src/comments.css");
-	require_once("src/mobile.css");
-	require_once("src/mobile.css");
+	require_once("src/responsive.css");
 ?>
 
 

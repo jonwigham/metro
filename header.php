@@ -47,19 +47,21 @@
 	<div id="header">
 		<div id="social_login">
 			<div id="login">
-				<?php if (is_user_logged_in()): ?>
+			<?php if (is_user_logged_in()): ?>
 				<?php
 					global $current_user;
-					get_currentuserinfo();
+
+					$user = wp_get_current_user();
+					$user_identity = ! empty( $user->ID ) ? $user->display_name : '';
 				?>
 				<div class="text">
-					Welcome <?php echo $current_user->user_firstname; ?><br />
+					<span>Welcome <?php echo $user_identity; ?></span><br />
 					<a href="<?php echo get_admin_url(); ?>" title="Admin">Admin</a>&nbsp;|&nbsp;<a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout">Logout</a>
 				</div>
 				<div class="image theme_background">
-				<?php echo get_avatar($current_user->user_email, "40"); ?>
+					<a href="<?php echo get_admin_url(); ?>" title="Admin"><?php echo get_avatar($current_user->user_email, "40"); ?></a>
 				</div>
-				<?php else: ?>
+			<?php else: ?>
 				<div class="text">
 					Welcome, guest!<br />
 					<a href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
@@ -67,7 +69,7 @@
 				<div class="image theme_background">
 					<img src="<?php bloginfo("template_url"); ?>/images/guest.png" alt="Guest" />
 				</div>
-				<?php endif; ?>
+			<?php endif; ?>
 			</div>
 			<div id="social">
 				<ul>
