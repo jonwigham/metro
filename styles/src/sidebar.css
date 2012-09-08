@@ -70,6 +70,7 @@
 			height: 80px;
 			position: relative;
 			font-size: 12px;
+			overflow: hidden;
 			}
 
 			#sidebar #categories ul li a:hover {
