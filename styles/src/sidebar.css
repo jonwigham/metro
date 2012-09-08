@@ -84,3 +84,28 @@
 			display: block;
 			}
 
+#wp-calendar {
+	width: 100%;
+	}
+
+	#wp-calendar caption {
+		padding-bottom: 5px;
+		}
+
+	#wp-calendar tr {
+		clear: both;
+		}
+	
+	#wp-calendar th {
+		border-bottom: 1px solid #888888;
+		}
+	
+	#wp-calendar tfoot td {
+		border-top: 1px solid #888888;
+		border-bottom: 1px solid #888888;
+		}
+
+	#wp-calendar td {
+		padding: 5px 10px;
+		font-size: 12px;
+		}
