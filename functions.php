@@ -11,19 +11,6 @@ require_once(get_template_directory() . "/theme-options.php");
 // Tell WordPress to run metro_setup() when the 'after_setup_theme' hook is run
 add_action("after_setup_theme", "metro_setup");
 
-// Color picker for '#' value fields
-wp_enqueue_script("jscolor.js", get_bloginfo("stylesheet_directory") . "/scripts/jscolor/jscolor.js");
-
-// CSS for the admin/options page
-add_action("admin_head", "admin_css");
-function admin_css()
-{
-?>
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo("template_url"); ?>/styles/admin.css" />
-<?php
-}
-
-
 if (!function_exists("metro_setup"))
 {
 	function metro_setup() {

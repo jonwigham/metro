@@ -2,35 +2,45 @@
 /**
  * @package WordPress
  * @subpackage Metro
- * @since Metro 1.1
+ * @since Metro 1.0
  */
 
-add_action("admin_init", "theme_options_init");
-add_action("admin_menu", "theme_options_add_page");
+add_action("admin_init", "metro_options_init");
+add_action("admin_menu", "metro_options_add_page");
 
 /**
  * Init plugin options to white list our options
  */
-function theme_options_init()
+function metro_options_init()
 {
-	register_setting("metro_options", "metro_theme_options", "theme_options_validate");
+	register_setting("metro_options", "metro_theme_options", "metro_options_validate");
 }
 
 /**
  * Load up the menu page
  */
-function theme_options_add_page()
+function metro_options_add_page()
 {
-	add_theme_page(__("Theme Options", "sampletheme"), __("Theme Options", "sampletheme"), "edit_theme_options", "theme_options", "theme_options_do_page");
+	$page = add_theme_page(__("Metro Theme Options"), __("Metro Theme Options"), "edit_theme_options", "metro_options", "metro_options_do_page");
+	add_action("admin_print_scripts-{$page}", "metro_options_assets");
 }
 
+/**
+ * Load up the CSS/JS for the options page
+ */
+function metro_options_assets() {
+	wp_enqueue_script("jscolor", get_bloginfo("stylesheet_directory") . "/scripts/jscolor/jscolor.js");
+	wp_enqueue_style("admin", get_bloginfo("stylesheet_directory") . "/styles/admin.css");
+}
 
 /**
  * Create the options page
  */
-function theme_options_do_page()
+function metro_options_do_page()
 {
 	global $select_options, $radio_options;
+
+	add_action("admin_head-{$my_settings_page}", 'my_admin_head_script' );
 
 	if (!isset($_REQUEST["settings-updated"])) $_REQUEST["settings-updated"] = false;
 ?>
@@ -113,7 +123,7 @@ function theme_options_do_page()
 /**
 * Sanitize and validate input. Accepts an array, return a sanitized array.
 */
-function theme_options_validate($input)
+function metro_options_validate($input)
 {
 	global $select_options, $radio_options;
 
