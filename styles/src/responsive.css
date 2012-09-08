@@ -22,13 +22,18 @@
 
 	#container { width: 65%; }
 	#sidebar { width: 30%; }
+	#main { margin: 0 10px; }
+	#masthead {
+		border-left: 10px solid #ffffff;
+		margin-right: 10px;
+		}
 
 	#social_login { height: 35px; }
 		#social_login br { display: none; }
 		#social_login img,
 		#social_login .image {
-			height: 22px;
-			width: 22px;
+			height: 20px;
+			width: 20px;
 			}
 
 		#site-title li { margin-right: 20px; }
