@@ -106,11 +106,13 @@
 				<div class="padding_10"></div>
 				<h2 id="site-description"><?php bloginfo("description"); ?></h2>
 				<div id="site-title">
-					<ul class="last">
-						<li class="item_active"><a href="<?php echo home_url("/"); ?>" title="<?php echo esc_attr(get_bloginfo("name", "display")); ?>"><?php bloginfo("name"); ?></a></li>
-						<li><a href="/about" title="What we do">What we do</a></li>
-						<li class="last"><a href="/contact" title="Contact us">Contact us</a></li>
-					</ul>
+					<?php if (has_nav_menu("primary")): ?>
+						<?php wp_nav_menu(); ?>
+					<?php else: ?>
+						<ul>
+							<li class="current_page_item"><a href="<?php echo home_url("/"); ?>" title="<?php echo esc_attr(get_bloginfo("name", "display")); ?>"><?php bloginfo("name"); ?></a></li>
+						</ul>
+					<?php endif; ?>
 					<div class="clear"></div>
 				</div>
 			</div>

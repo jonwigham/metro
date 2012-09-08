@@ -9,7 +9,7 @@ body {
 #comments h3#reply-title,
 .secondary-color { color: #{SECONDARY_FONT_COLOUR}; }
 
-#site-title li.item_active a { color: #{FONT_COLOUR}; }
+#site-title li.current_page_item a { color: #{FONT_COLOUR}; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7a { color: #{FONT_COLOUR}; }
 

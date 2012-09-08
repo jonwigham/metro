@@ -74,7 +74,7 @@
 			text-transform: lowercase;
 			}
 
-			#site-title li.item_active {
+			#site-title li.current_page_item {
 				text-transform: none;
 				}
 

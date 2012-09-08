@@ -11,7 +11,6 @@ require_once(get_template_directory() . "/theme-options.php");
 // Load up the widgets
 require_once("theme-widgets.php");
 
-
 // Tell WordPress to run metro_setup() when the 'after_setup_theme' hook is run
 add_action("after_setup_theme", "metro_setup");
 
