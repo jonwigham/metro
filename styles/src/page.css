@@ -16,6 +16,14 @@
 			padding-bottom: 0;
 			}
 
+	.post pre {
+		background-color: #dddddd;
+		padding: 5px;
+		margin-bottom: 5px;
+		font-size: 12px;
+		overflow: scroll;
+		}
+
 .comments-callout {
 	float: left;
 	width: 40px;
