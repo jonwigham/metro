@@ -1,23 +1,20 @@
 <?php
-	header("Content-type: text/css");
-
-	require_once("src/common.css");
-	require_once("src/main.css");
-	require_once("src/header.css");
-	require_once("src/footer.css");
-	require_once("src/sidebar.css");
-	require_once("src/page.css");
-	require_once("src/comments.css");
-	require_once("src/responsive.css");
-?>
-
-
-<?php
 	/**
-	 * Theme
+	 * Main CSS
+	 *
+	 * We minify everything on the fly so that the source files remain in place and easily editable
+	 */
+	$css_output = "";
+	$style_sheets = array("common", "main", "header", "footer", "sidebar", "page", "comments", "responsive");
+	foreach ($style_sheets as $file) $css_output .= file_get_contents("src/{$file}.css");
+
+
+	/**
+	 * Theme colours
 	 */
 	$template_path = str_replace("/styles/styles.php", "", $_SERVER["PHP_SELF"]);
 	$theme = (in_array($_GET["theme"], array("light", "dark"))) ? $_GET["theme"] : "light";
+	$theme_css = file_get_contents("src/theme.css");
 	if ($theme == "dark")
 	{
 		$theme_colour = "dark";
@@ -32,69 +29,70 @@
 		$secondary_font_colour = "888888";
 		$bg_colour = "ffffff";
 	}
-?>
-/* Theme */
-body {
-	background-color: #<?php echo $bg_colour; ?>;
-	color: #<?php echo $font_colour; ?>;
-	}
-
-#site-title a,
-.post pre,
-#comments h3#reply-title,
-.secondary-color { color: #<?php echo $secondary_font_colour; ?>; }
-
-#site-title li.item_active a { color: #<?php echo $font_colour; ?>; }
-
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7a { color: #<?php echo $font_colour; ?>; }
-
-#comments .comment a,
-#comments .pingback a { color: #<?php echo $bg_colour; ?>; text-decoration: underline; }
-#comments .comment a:hover,
-#comments .pingback a:hover { text-decoration: none; }
-
-.callout span.arrow { background-color: #<?php echo $bg_colour; ?>; }
-
-#sidebar ul li.bullets ul li span.arrow { background-image: url("<?php echo $template_path; ?>/images/themes/<?php echo $theme_colour; ?>/arrow.png"); }
-
-#sidebar #categories ul li a { border: 1px solid #<?php echo $bg_colour; ?>; }
+	$css_output .= str_replace(
+		array(
+			"{BG_COLOUR}",
+			"{FONT_COLOUR}",
+			"{SECONDARY_FONT_COLOUR}",
+			"{TEMPLATE_PATH}",
+			"{THEME_COLOUR}"
+		),
+		array(
+			$bg_colour,
+			$font_colour,
+			$secondary_font_colour,
+			$template_path,
+			$theme
+		), $theme_css
+	);
 
 
-<?php
 	/**
 	 * Accent Colour
 	 */
-	$colour = preg_match("/^[a-f0-9]{6}$/", strtolower($_GET["accent"])) ? $_GET["accent"] : "1ba1e2";
+	$colour = preg_match("/^[a-f0-9]{6}$/", strtolower($_GET["accent"])) ? strtolower($_GET["accent"]) : "1ba1e2";
 	$dark_colour = ColorDarken($colour, 50);
+	$accent_css = file_get_contents("src/accent.css");
+	$css_output .= str_replace(
+		array(
+			"{COLOUR}",
+			"{DARK_COLOUR}"
+		),
+		array(
+			$colour,
+			$dark_colour
+		), $accent_css
+	);
 
+
+	/**
+	 * Return a colour $dif shades darker than the supplied hex
+	 */
 	function ColorDarken($colour, $dif)
 	{
 		if (strlen($colour) != 6) return "000000";
 		$rgb = "";
 		for ($x=0; $x<3; $x++)
 		{
-		$c = hexdec(substr($colour, (2*$x), 2)) - $dif;
-		$c = ($c < 0) ? 0 : dechex($c);
-		$rgb .= (strlen($c) < 2) ? "0" . $c : $c;
+			$c = hexdec(substr($colour, (2*$x), 2)) - $dif;
+			$c = ($c < 0) ? 0 : dechex($c);
+			$rgb .= (strlen($c) < 2) ? "0" . $c : $c;
+		}
+		return strtolower($rgb);
 	}
-	return $rgb;
-	}
 
-?>
-/* Accent */
 
-.theme_color, a { color: #<?php echo $colour; ?>; }
+	/**
+	 * Minify the shit ot of it all
+	 */
+	$css_output = preg_replace("/\/\*[^\*]*\*\//", "", $css_output);// remove all comments
+	$css_output = preg_replace("/\t/", "", $css_output); // remove tabs
+	$css_output = preg_replace("/\n/", "", $css_output); // remove line breaks
+	$css_output = preg_replace("/(\s{)/", "{", $css_output); // remove the space around the braces
+	$css_output = preg_replace("/({\s)/", "{", $css_output); // remove the space around the braces
+	$css_output = preg_replace("/(\s})/", "}", $css_output); // remove the space around the braces
+	$css_output = preg_replace("/(,\s)/", ",", $css_output); // remove the space after commas
+	$css_output = preg_replace("/(:\s)/", ":", $css_output); // remove the space after colons
 
-.theme_background { background-color: #<?php echo $colour; ?>; color: #ffffff; }
-.theme_background_dark { background-color: #<?php echo $dark_colour; ?>; color: #ffffff; }
-.theme_background a { color: #ffffff; }
-
-#sidebar ul li.bullets ul li span.arrow,
-#searchform div span { background-color: #<?php echo $colour; ?>; }
-
-#masthead,
-.entry-meta img.avatar,
-.post blockquote,
-#sidebar #categories ul li a:hover,
-#searchform input,
-#social { border-color: #<?php echo $colour; ?>; }
+	header("Content-type: text/css");
+	echo $css_output;

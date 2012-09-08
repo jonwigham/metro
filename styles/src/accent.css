@@ -1,0 +1,17 @@
+/* Accent */
+
+.theme_color, a { color: #{COLOUR}; }
+
+.theme_background { background-color: #{COLOUR}; color: #ffffff; }
+.theme_background_dark { background-color: #{DARK_COLOUR}; color: #ffffff; }
+.theme_background a { color: #ffffff; }
+
+#sidebar ul li.bullets ul li span.arrow,
+#searchform div span { background-color: #{COLOUR}; }
+
+#masthead,
+.entry-meta img.avatar,
+.post blockquote,
+#sidebar #categories ul li a:hover,
+#searchform input,
+#social { border-color: #{COLOUR}; }
