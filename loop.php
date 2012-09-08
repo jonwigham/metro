@@ -56,7 +56,7 @@
 					</span>
 				<?php endif; ?>
 
-				<div class="padding_20"></div>
+				<div class="clear"></div>
 				<div class="post_options open">
 
 					<script type="text/JavaScript">
