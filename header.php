@@ -116,7 +116,7 @@
 					<div class="clear"></div>
 				</div>
 			</div>
-		</div><!-- #masthead -->
-	</div><!-- #header -->
+		</div>
+	</div>
 
 	<div id="main">
