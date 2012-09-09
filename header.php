@@ -84,6 +84,9 @@
 				<?php if ($metro_options["fb_url"]): ?>
 					<li><a href="<?php echo $metro_options["fb_url"]; ?>" title="Facebook" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/facebook.png" alt="Facebook" /></a></li>
 				<?php endif; ?>
+				<?php if ($metro_options["google_url"]): ?>
+					<li><a href="<?php echo $metro_options["google_url"]; ?>" title="Google" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/google-plus.png" alt="Google+" /></a></li>
+				<?php endif; ?>
 				<?php if ($metro_options["flicker_id"]): ?>
 					<li><a href="https://www.flickr.com/photos/<?php echo $metro_options["flicker_id"]; ?>" title="Flickr" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/flickr.png" alt="Flickr" /></a></li>
 				<?php endif; ?>

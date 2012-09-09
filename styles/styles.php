@@ -87,7 +87,7 @@
 
 
 	/**
-	 * Minify the shit ot of it all
+	 * Minify the shit out of it all
 	 */
 	$css_output = preg_replace("/\/\*[^\*]*\*\//", "", $css_output);// remove all comments
 	$css_output = preg_replace("/\t/", "", $css_output); // remove tabs
