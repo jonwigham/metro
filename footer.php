@@ -18,7 +18,7 @@
 			<div id="site-info">
 				&copy; <a href="<?php echo home_url("/"); ?>" title="<?php echo esc_attr(get_bloginfo("name", "display") ); ?>" rel="home"><?php bloginfo("name"); ?></a>.
 				All rights reserved.
-				Metro Theme created by Jon Wigham.
+				Metro Theme created by <a href="http://www.routeofqueue.com" rel="external">Jon Wigham</a>.
 				<a href="<?php echo esc_url(__("http://wordpress.org/")); ?>"><?php printf(_("Proudly powered by %s"), "WordPress"); ?></a>.
 			</div>
 		</div>
