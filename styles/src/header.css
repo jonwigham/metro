@@ -74,10 +74,6 @@
 			text-transform: lowercase;
 			}
 
-			#site-title li.current_page_item {
-				text-transform: none;
-				}
-
 			#site-title li.last {
 				margin-right: 0;
 				}
