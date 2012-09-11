@@ -8,6 +8,7 @@
 	.post { width: 100%; }
 	#sidebar { width: 25%; }
 	.comments-callout { display: none; }
+	 .navigation .nav-next { margin-right: 0; }
 
 }
 
@@ -100,6 +101,10 @@
 		border-right: 0;
 		margin: 0;
 		}
+
+	 .navigation .nav a {
+	 	padding: 10px 20px;
+	 	}
 	
 }
 
@@ -108,5 +113,9 @@
 	.post_options .social .addthis_toolbox li img {
 		margin: 0 10px;
 		}
+
+	 .navigation .nav a {
+	 	padding: 10px;
+	 	}
 	
 }

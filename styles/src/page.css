@@ -102,3 +102,23 @@
 	#author-description {
 		padding-top: 20px;
 		}
+
+
+.navigation {}
+
+	 .navigation .nav a {
+	 	display: block;
+	 	padding: 10px 40px;
+	 	margin: -20px 0 10px 0;
+		background-color: #dddddd;
+	 	color: #444444;
+	 	}
+
+	 .navigation .nav-previous {
+	 	float: left;
+	 	}
+
+	 .navigation .nav-next {
+	 	float: right;
+	 	margin-right: 60px;
+	 	}
