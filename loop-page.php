@@ -16,6 +16,8 @@
 			<?php the_content(); ?>
 		</div>
 	</div>
+	<div class="clear"></div>
+	<div class="padding_40"></div>
 
 	<?php comments_template("", true); ?>
 

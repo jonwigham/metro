@@ -1,22 +1,22 @@
 /* =Content
 -------------------------------------------------------------- */
 
-.post {
+.post, #main .page {
 	width: 540px;
 	float: left;
 	}
 
-	.post blockquote {
+	.post blockquote, #main .page blockquote {
 		border-left: 10px solid #ffffff;
 		padding-left: 10px;
 		margin-bottom: 15px;
 		}
 
-		.post blockquote p {
+		.post blockquote p, #main .page blockquote p {
 			padding-bottom: 0;
 			}
 
-	.post pre {
+	.post pre, #main .page pre {
 		background-color: #dddddd;
 		padding: 5px;
 		margin-bottom: 5px;

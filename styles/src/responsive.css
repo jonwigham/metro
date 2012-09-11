@@ -5,10 +5,11 @@
 
 	.wrapper { width: 100%; }
 	#container { width: 70%; }
-	.post { width: 100%; }
+	.post, #main .page { width: 100%; }
 	#sidebar { width: 25%; }
+		#searchform div input#s { width: 80%; }
 	.comments-callout { display: none; }
-	 .navigation .nav-next { margin-right: 0; }
+	.navigation .nav-next { margin-right: 0; }
 
 }
 
@@ -38,6 +39,9 @@
 			}
 
 		#site-title li { margin-right: 20px; }
+
+	#comments { width: 100%; }
+		#comments textarea{ width: 98%; }
 
 }
 
@@ -80,17 +84,15 @@
 @media (max-width: 600px) {
 	
 	#social_login .text span { display: none; }
-	.post img {
+	.post img, #main .page img {
 		height: auto;
 		max-width: 95%;
 		width: auto;
 		}
-	#comments { width: 100%; }
-		#comments textarea{ width: 98%; }
 
-		#comments li.comment,
-		#comments li.pingback { margin-right: 20px; }
-			#comments li.comment.byuser { margin-left: 20px; }
+	#comments li.comment,
+	#comments li.pingback { margin-right: 20px; }
+		#comments li.comment.byuser { margin-left: 20px; }
 	
 }
 
