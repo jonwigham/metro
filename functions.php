@@ -226,18 +226,18 @@ if (!function_exists("metro_comment_navigation"))
 function metro_comment_form($form_options)
 {
 	$label = "Name" . (($req) ? " (required)" : "");
-	$author  = '<p class="comment-form-author">';
-	$author .= '	<input id="author" name="author" type="text" value="' . esc_attr($commenter["comment_author"]) . '" size="30"' . $aria_req . ' placeholder="' . __($label) . '" />';
+	$author  = '<p class="comment-form-author"><label>' . __($label) . '</label>';
+	$author .= '	<input id="author" name="author" type="text" value="' . esc_attr($commenter["comment_author"]) . '" size="30"' . $aria_req . ' class="field" />';
 	$author .= '</p>';
 
 	$label = "Email" . (($req) ? " (required, will not be published)" : "");
-	$email  = '<p class="comment-form-email">';
-	$email .= '	<input id="email" name="email" type="text" value="' . esc_attr($commenter["comment_author_email"]) . '" size="30"' . $aria_req . ' placeholder="' . __($label) . '" />';
+	$email  = '<p class="comment-form-email"><label>' . __($label) . '</label>';
+	$email .= '	<input id="email" name="email" type="text" value="' . esc_attr($commenter["comment_author_email"]) . '" size="30"' . $aria_req . ' class="field" />';
 	$email .= '</p>';
 
 	$label = "Website" . (($req) ? " (required)" : "");
-	$website  = '<p class="comment-form-url">';
-	$website .= '	<input id="url" name="url" type="text" value="' . esc_attr($commenter["comment_author_url"]) . '" size="30"' . $aria_req . ' placeholder="' . __($label) . '" />';
+	$website  = '<p class="comment-form-url"><label>' . __($label) . '</label>';
+	$website .= '	<input id="url" name="url" type="text" value="' . esc_attr($commenter["comment_author_url"]) . '" size="30"' . $aria_req . ' class="field" />';
 	$website .= '</p>';
 
 	$fields = array(
@@ -248,8 +248,8 @@ function metro_comment_form($form_options)
 
 
 	$label = "Comment" . (($req) ? " (required)" : "");
-	$comment  = '<p class="comment-form-comment">';
-	$comment .= '	<textarea name="comment" id="comment" aria-required="true" rows="8" cols="45" placeholder="' . __($label) . '"></textarea>';
+	$comment  = '<p class="comment-form-comment"><label>' . __($label) . '</label>';
+	$comment .= '	<textarea name="comment" id="comment" rows="8" cols="45" class="field"></textarea>';
 	$comment .= '</p>';
 
 	$logged_in  = '<p class="must-log-in">';

@@ -47,7 +47,20 @@
 		padding: 0;
 		}
 
+		#comments_form form p label {
+			display: none;
+			}
+
 	#comments_form form input {
 		margin-bottom: 5px;
 		border: 1px solid #abadb3;
+		}
+
+	#comments_form form input,
+	#comments_form form textarea {
+		padding: 5px;
+		}
+
+	#comments_form form .field.inactive {
+		color: #888888;
 		}

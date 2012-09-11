@@ -29,3 +29,35 @@ addOnLoad(function() {
 		}
 	}
 });
+
+addOnLoad(function() {
+
+	if (!$("comments_form")) return;
+
+	$$("#comments_form .field").each(function(el) {
+
+		clearMetroField(el);
+
+		$(el).observe("focus", function() {
+			if (this.value == $(this).up("p").down("label").innerHTML)
+			{
+				this.value = "";
+				$(this).removeClassName("inactive");
+			}
+		});
+		$(el).observe("blur", function() {
+			clearMetroField(this);
+		});
+
+	});
+
+});
+
+function clearMetroField(el)
+{
+	if ($(el).value == "")
+	{
+		$(el).value = $(el).up("p").down("label").innerHTML;
+		$(el).addClassName("inactive");
+	}
+}
