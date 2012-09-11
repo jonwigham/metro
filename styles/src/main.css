@@ -39,5 +39,13 @@
 .callout.bottom-right {
 	float: right;
 	margin-right: 0;
+	margin-bottom: -10px;
 	}
 
+.callout.bottom-left span.arrow {
+	line-height: 8px;
+	}
+
+	.callout.bottom-left span.arrow img {
+		height: 11px;
+		}
