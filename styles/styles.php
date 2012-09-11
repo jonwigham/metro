@@ -5,7 +5,7 @@
 	 * We minify everything on the fly so that the source files remain in place and easily editable
 	 */
 	$css_output = "";
-	$style_sheets = array("common", "main", "header", "footer", "sidebar", "page", "comments", "responsive");
+	$style_sheets = array("common", "main", "header", "footer", "sidebar", "page", "comments", "responsive", "print");
 	foreach ($style_sheets as $file) $css_output .= file_get_contents("src/{$file}.css");
 
 
