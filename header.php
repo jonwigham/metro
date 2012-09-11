@@ -87,17 +87,20 @@
 				<?php if ($metro_options["google_url"]): ?>
 					<li><a href="<?php echo $metro_options["google_url"]; ?>" title="Google" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/google-plus.png" alt="Google+" /></a></li>
 				<?php endif; ?>
+				<?php if ($metro_options["linkedin_url"]): ?>
+					<li><a href="<?php echo $metro_options["linkedin_url"]; ?>" title="LinkedIn" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" /></a></li>
+				<?php endif; ?>
 				<?php if ($metro_options["flicker_id"]): ?>
 					<li><a href="http://www.flickr.com/photos/<?php echo $metro_options["flicker_id"]; ?>" title="Flickr" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/flickr.png" alt="Flickr" /></a></li>
-				<?php endif; ?>
-				<?php if ($metro_options["github_id"]): ?>
-					<li><a href="https://github.com/<?php echo $metro_options["github_id"]; ?>" title="github" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/github.png" alt="github" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["youtube_id"]): ?>
 					<li><a href="https://www.youtube.com/user/<?php echo $metro_options["youtube_id"]; ?>" title="YouTube" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/youtube.png" alt="YouTube" /></a></li>
 				<?php endif; ?>
-				<?php if ($metro_options["linkedin_url"]): ?>
-					<li><a href="<?php echo $metro_options["linkedin_url"]; ?>" title="LinkedIn" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" /></a></li>
+				<?php if ($metro_options["github_id"]): ?>
+					<li><a href="https://github.com/<?php echo $metro_options["github_id"]; ?>" title="Github" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/github.png" alt="Github" /></a></li>
+				<?php endif; ?>
+				<?php if ($metro_options["app.net_id"]): ?>
+					<li><a href="https://alpha.app.net/<?php echo $metro_options["app.net_id"]; ?>" title="App.Net" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/app.net.png" alt="App.Net" /></a></li>
 				<?php endif; ?>
 				</ul>
 			</div>

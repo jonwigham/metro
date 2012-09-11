@@ -144,6 +144,14 @@ function metro_options_do_page()
 					</td>
 				</tr>
 				<tr valign="top">
+					<th scope="row"><?php _e("LinkedIn Profile"); ?></th>
+					<td>
+						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[linkedin_url]" value="<?php esc_attr_e($options["linkedin_url"]); ?>" />
+						<label class="description"><?php _e("Full URL to your profile"); ?></label>
+					</td>
+				</tr>
+				<tr valign="top">
 					<th scope="row"><?php _e("Flickr ID"); ?></th>
 					<td>
 						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/flickr.png" alt="Flickr" class="social_icon" />
@@ -165,11 +173,10 @@ function metro_options_do_page()
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("LinkedIn Profile"); ?></th>
+					<th scope="row"><?php _e("App.Net ID"); ?></th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[linkedin_url]" value="<?php esc_attr_e($options["linkedin_url"]); ?>" />
-						<label class="description"><?php _e("Full URL to your profile"); ?></label>
+						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/app.net.png" alt="App.Net" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[app.net_id]" value="<?php esc_attr_e($options["app.net_id"]); ?>" />
 					</td>
 				</tr>
 				</table>
