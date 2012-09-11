@@ -64,7 +64,7 @@
 <?php if (!is_singular() && $post->comment_status == "open"): ?>
 	<div class="comments-callout callout theme_background">
 		<?php comments_popup_link(__("0"), __("1"), __("%")); ?>
-		<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo $metro_options["css_theme"]; ?>/callout-arrow-bottom-left.png" alt="&nbsp;" /></span>
+		<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-bottom-left.png" alt="&nbsp;" /></span>
 	</div>
 <?php endif; ?>
 	<div class="clear"></div>

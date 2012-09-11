@@ -143,7 +143,7 @@ if (!function_exists("metro_comment"))
 
 	<?php if ($comment->user_id < 1): ?>
 		<div class="callout top-left theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
-			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo $metro_options["css_theme"]; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
 		</div>
 	<?php endif; ?>
 
@@ -168,7 +168,7 @@ if (!function_exists("metro_comment"))
 
 	<?php if ($comment->user_id > 0): ?>
 		<div class="callout bottom-right theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
-			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo $metro_options["css_theme"]; ?>/callout-arrow-bottom-right.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-bottom-right.png" alt="&nbsp;" /></span>
 		</div>
 	<?php endif; ?>
 <?php
@@ -181,7 +181,7 @@ if (!function_exists("metro_comment"))
 		<div class="clear"></div>
 
 		<div class="callout top-left theme_background">
-			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo $metro_options["css_theme"]; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
 		</div>
 
 		<div id="comment-<?php comment_ID(); ?>" class="comment theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">

@@ -33,16 +33,12 @@
 		array(
 			"{BG_COLOUR}",
 			"{FONT_COLOUR}",
-			"{SECONDARY_FONT_COLOUR}",
-			"{TEMPLATE_PATH}",
-			"{THEME_COLOUR}"
+			"{SECONDARY_FONT_COLOUR}"
 		),
 		array(
 			$bg_colour,
 			$font_colour,
-			$secondary_font_colour,
-			$template_path,
-			$theme
+			$secondary_font_colour
 		), $theme_css
 	);
 
@@ -86,6 +82,16 @@
 	}
 
 
+	$css_output .= str_replace(
+		array(
+			"{TEMPLATE_PATH}",
+			"{THEME_COLOUR}"
+		),
+		array(
+			$template_path,
+			$theme
+		), $css_output
+	);
 	/**
 	 * Minify the shit out of it all
 	 */

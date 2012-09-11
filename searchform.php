@@ -13,7 +13,7 @@
 	<h4 class="widget-title"><?php _e("Search this site"); ?></h4>
 	<div>
 		<input type="text" value="" name="s" id="s" />
-		<span><input type="image" src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo $metro_options["css_theme"]; ?>/search.png" alt="Go &raquo;" class="submit" /></span>
+		<span><input type="image" src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/search.png" alt="Go &raquo;" class="submit" /></span>
 		<div class="clear"></div>
 		<div class="padding_10"></div>
 	</div>

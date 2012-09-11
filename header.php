@@ -88,7 +88,7 @@
 					<li><a href="<?php echo $metro_options["google_url"]; ?>" title="Google" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/google-plus.png" alt="Google+" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["flicker_id"]): ?>
-					<li><a href="https://www.flickr.com/photos/<?php echo $metro_options["flicker_id"]; ?>" title="Flickr" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/flickr.png" alt="Flickr" /></a></li>
+					<li><a href="http://www.flickr.com/photos/<?php echo $metro_options["flicker_id"]; ?>" title="Flickr" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/flickr.png" alt="Flickr" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["github_id"]): ?>
 					<li><a href="https://github.com/<?php echo $metro_options["github_id"]; ?>" title="github" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/github.png" alt="github" /></a></li>
