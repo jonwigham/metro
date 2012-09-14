@@ -5,16 +5,22 @@
 	 * We minify everything on the fly so that the source files remain in place and easily editable
 	 */
 	$css_output = "";
-	$style_sheets = array("common", "main", "header", "footer", "sidebar", "page", "comments", "responsive", "print");
-	foreach ($style_sheets as $file) $css_output .= file_get_contents("src/{$file}.css");
+	$style_sheets = array("common", "main", "header", "footer", "sidebar", "page", "comments", "responsive", "print", "theme", "accent");
+
+	ob_start();
+		foreach ($style_sheets as $file) require_once("src/{$file}.css");
+		$css_output .= ob_get_contents();
+	ob_end_clean();
 
 
 	/**
-	 * Theme colours
+	 * Theme and Accent colours
 	 */
-	$template_path = str_replace("/styles/styles.php", "", $_SERVER["PHP_SELF"]);
+	$colour = preg_match("/^[a-f0-9]{6}$/", strtolower($_GET["accent"])) ? strtolower($_GET["accent"]) : "1ba1e2";
 	$theme = (in_array($_GET["theme"], array("light", "dark"))) ? $_GET["theme"] : "light";
-	$theme_css = file_get_contents("src/theme.css");
+	$template_path = str_replace("/styles/styles.php", "", $_SERVER["PHP_SELF"]);
+	$dark_colour = ColorDarken($colour, 50);
+
 	if ($theme == "dark")
 	{
 		$theme_colour = "dark";
@@ -29,39 +35,30 @@
 		$secondary_font_colour = "888888";
 		$bg_colour = "ffffff";
 	}
+
+
+	/**
+	 * Replace the shit out of everything
+	 */
 	$css_output .= str_replace(
 		array(
 			"{BG_COLOUR}",
 			"{FONT_COLOUR}",
-			"{SECONDARY_FONT_COLOUR}"
-		),
-		array(
-			$bg_colour,
-			$font_colour,
-			$secondary_font_colour
-		), $theme_css
-	);
-
-
-	/**
-	 * Accent Colour
-	 */
-	$colour = preg_match("/^[a-f0-9]{6}$/", strtolower($_GET["accent"])) ? strtolower($_GET["accent"]) : "1ba1e2";
-	$dark_colour = ColorDarken($colour, 50);
-	$accent_css = file_get_contents("src/accent.css");
-	$css_output .= str_replace(
-		array(
+			"{SECONDARY_FONT_COLOUR}",
 			"{COLOUR}",
 			"{DARK_COLOUR}",
 			"{TEMPLATE_PATH}",
 			"{THEME_COLOUR}"
 		),
 		array(
+			$bg_colour,
+			$font_colour,
+			$secondary_font_colour,
 			$colour,
 			$dark_colour,
 			$template_path,
 			$theme
-		), $accent_css
+		), $css_output
 	);
 
 
@@ -82,16 +79,6 @@
 	}
 
 
-	$css_output .= str_replace(
-		array(
-			"{TEMPLATE_PATH}",
-			"{THEME_COLOUR}"
-		),
-		array(
-			$template_path,
-			$theme
-		), $css_output
-	);
 	/**
 	 * Minify the shit out of it all
 	 */
