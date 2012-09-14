@@ -13,7 +13,7 @@
 
 	<?php if (have_posts()) the_post(); ?>
 
-	<h1 class="page-title author"><?php printf(__("Author Archives: %s"), get_the_author()); ?></h1>
+	<h1 class="page-title author">Author Archives: <?php echo get_the_author(); ?></h1>
 
 <?php if (get_the_author_meta("description")) : ?>
 	<div id="entry-author-info">

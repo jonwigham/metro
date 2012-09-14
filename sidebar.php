@@ -27,7 +27,11 @@
 				$class_name = "";
 				if ($category === end($categories)) $class_name .= "last";
 		?>
-			<li class="theme_background <?php echo $class_name; ?>"><a href="<?php echo get_category_link($category->term_id); ?>" title="<?php sprintf( __( "View all posts in %s" ), $category->name ); ?>"><span><?php echo $category->name; ?></span></a></li>
+			<li class="theme_background <?php echo $class_name; ?>">
+				<a href="<?php echo get_category_link($category->term_id); ?>" title="View all posts in <?php echo $category->name; ?>">
+					<span><?php echo $category->name; ?></span>
+				</a>
+			</li>
 		<?php
 			}
 		?>
@@ -44,7 +48,7 @@
 	{
 ?>
 	<li id="recent_posts" class="widget-container bullets">
-		<h4 class="widget-title"><?php _e("Recent posts"); ?></h4>
+		<h4 class="widget-title">Recent posts</h4>
 		<ul>
 		<?php
 			foreach ($recent_posts as $recent_post)
@@ -52,7 +56,11 @@
 				$class_name = "";
 				if ($recent_post === end($recent_posts)) $class_name .= "last";
 		?>
-			<li class="<?php echo $class_name; ?>"><span class="arrow"></span><span><a href="<?php echo get_permalink($recent_post["ID"]); ?>" title="<?php echo esc_attr($recent_post["post_title"]); ?>"><?php echo $recent_post["post_title"]; ?></a></span></li>
+			<li class="<?php echo $class_name; ?>">
+				<a href="<?php echo get_permalink($recent_post["ID"]); ?>" title="<?php echo esc_attr($recent_post["post_title"]); ?>">
+					<?php echo $recent_post["post_title"]; ?>
+				</a>
+			</li>
 		<?php
 			}
 		?>
@@ -76,7 +84,7 @@
 	{
 ?>
 	<li id="recent_comments" class="widget-container bullets">
-		<h4 class="widget-title"><?php _e("Recent comments"); ?></h4>
+		<h4 class="widget-title">Recent comments</h4>
 		<ul>
 		<?php
 			foreach ($recent_comments as $recent_comment)
@@ -86,7 +94,12 @@
 				$class_name = "";
 				if ($recent_comment === end($recent_comments)) $class_name .= "last";
 		?>
-			<li class="<?php echo $class_name; ?>"><span class="arrow"></span><span><?php echo $recent_comment->comment_author; ?> on <a href="<?php echo get_permalink($comment_post->ID); ?>#comment-<?php echo $recent_comment->comment_ID; ?>" title="<?php echo esc_attr($comment_post->post_title); ?>"><?php echo $comment_post->post_title; ?></a></span></li>
+			<li class="<?php echo $class_name; ?>">
+				<?php echo $recent_comment->comment_author; ?> on
+				<a href="<?php echo get_permalink($comment_post->ID); ?>#comment-<?php echo $recent_comment->comment_ID; ?>" title="<?php echo esc_attr($comment_post->post_title); ?>">
+					<?php echo $comment_post->post_title; ?>
+				</a>
+			</li>
 		<?php
 			}
 		?>

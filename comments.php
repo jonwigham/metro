@@ -10,7 +10,7 @@
 
 <?php if (post_password_required()): ?>
 <div id="comments">
-	<p class="nopassword"><?php _e("This post is password protected. Enter the password to view any comments."); ?></p>
+	<p class="nopassword">This post is password protected. Enter the password to view any comments</p>
 </div>
 <?php return; endif; ?>
 
@@ -26,7 +26,7 @@
 	<?php metro_comment_navigation("bottom"); ?>
 
 <?php elseif (!comments_open()): ?>
-	<p class="nocomments"><?php _e("Comments are closed."); ?></p>
+	<p class="nocomments">Comments are closed.</p>
 <?php endif; ?>
 
 	<div id="comments_form">

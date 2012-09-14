@@ -21,7 +21,7 @@ function metro_options_init()
  */
 function metro_options_add_page()
 {
-	$page = add_theme_page(__("Metro Theme Options"), __("Metro Theme Options"), "edit_theme_options", "metro_options", "metro_options_do_page");
+	$page = add_theme_page("Metro Theme Options", "Metro Theme Options", "edit_theme_options", "metro_options", "metro_options_do_page");
 	add_action("admin_print_scripts-{$page}", "metro_options_assets");
 }
 
@@ -31,10 +31,10 @@ function metro_options_add_page()
 function metro_options_assets()
 {
 	wp_enqueue_script("prototype", "//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js");
-	wp_enqueue_script("jscolor", get_bloginfo("stylesheet_directory") . "/scripts/admin/jscolor/jscolor.js");
-	wp_enqueue_script("admin", get_bloginfo("stylesheet_directory") . "/scripts/admin/admin.js");
+	wp_enqueue_script("jscolor", get_stylesheet_directory_uri() . "/scripts/admin/jscolor/jscolor.js");
+	wp_enqueue_script("admin", get_stylesheet_directory_uri() . "/scripts/admin/admin.js");
 
-	wp_enqueue_style("admin", get_bloginfo("stylesheet_directory") . "/styles/admin/admin.css");
+	wp_enqueue_style("admin", get_stylesheet_directory_uri() . "/styles/admin/admin.css");
 }
 
 /**
@@ -42,16 +42,14 @@ function metro_options_assets()
  */
 function metro_options_do_page()
 {
-	add_action("admin_head-{$my_settings_page}", "my_admin_head_script");
-
 	if (!isset($_REQUEST["settings-updated"])) $_REQUEST["settings-updated"] = false;
 ?>
 
 <div class="wrap">
-<?php screen_icon(); echo "<h2>" . get_current_theme() . __("Theme Options") . "</h2>"; ?>
+<?php screen_icon(); echo "<h2>" . get_current_theme() . "Theme Options" . "</h2>"; ?>
 
 <?php if (false !== $_REQUEST["settings-updated"]): ?>
-	<div class="updated fade"><p><strong><?php _e("Options saved"); ?></strong></p></div>
+	<div class="updated fade"><p><strong>Options saved</strong></p></div>
 <?php endif; ?>
 
 	<form method="post" action="options.php">
@@ -78,23 +76,23 @@ function metro_options_do_page()
 				<table class="form-table">
 				<tr id="metro_theme_option" valign="top">
 					<th scope="row">
-						<?php _e("Theme"); ?>
+						Theme
 					</th>
 					<td class="answer narrow">
-						<a href="javascript:;" onclick="setMetroOption(this, 'light');"><img src="<?php echo bloginfo("template_url"); ?>/images/admin/theme-light.png" alt="Light" class="<?php echo ($options["css_theme"] == "light") ? "img_active" : ""; ?>" /></a>
+						<a href="javascript:;" onclick="setMetroOption(this, 'light');"><img src="<?php echo get_template_directory_uri(); ?>/images/admin/theme-light.png" alt="Light" class="<?php echo ($options["css_theme"] == "light") ? "img_active" : ""; ?>" /></a>
 					</td>
 					<td class="answer narrow">
-						<a href="javascript:;" onclick="setMetroOption(this, 'dark');"><img src="<?php echo bloginfo("template_url"); ?>/images/admin/theme-dark.png" alt="Dark" class="<?php echo ($options["css_theme"] == "dark") ? "img_active" : ""; ?>" /></a>
+						<a href="javascript:;" onclick="setMetroOption(this, 'dark');"><img src="<?php echo get_template_directory_uri(); ?>/images/admin/theme-dark.png" alt="Dark" class="<?php echo ($options["css_theme"] == "dark") ? "img_active" : ""; ?>" /></a>
 					</td>
 					<td class="other">
 						<input type="hidden" name="metro_theme_options[css_theme]" class="row_answer" value="<?php echo $options["css_theme"]; ?>" />
 					</td>
 				</tr>
 				<tr id="metro_accent_option" valign="top">
-					<th scope="row"><?php _e("Accent Colour"); ?></th>
+					<th scope="row">Accent Colour</th>
 					<td colspan="3">
-						<input class="regular-text color" id="metro_accent_colour" type="text" name="metro_theme_options[css_accent_colour]" value="<?php esc_attr_e($options["css_accent_colour"]); ?>" />
-						<label class="description"><?php _e("6 character hex, please!"); ?></label>
+						<input class="regular-text color" id="metro_accent_colour" type="text" name="metro_theme_options[css_accent_colour]" value="<?php echo esc_attr($options["css_accent_colour"]); ?>" />
+						<label class="description">6 character hex, please!</label>
 					</td>
 				</tr>
 				<tr id="metro_accent_suggestions">
@@ -121,62 +119,62 @@ function metro_options_do_page()
 
 				<table class="form-table">
 				<tr valign="top">
-					<th scope="row"><?php _e("Twitter ID"); ?></th>
+					<th scope="row">Twitter ID</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/twitter.png" alt="Twitter" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[twitter_id]" value="<?php esc_attr_e($options["twitter_id"]); ?>" />
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/twitter.png" alt="Twitter" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[twitter_id]" value="<?php echo esc_attr($options["twitter_id"]); ?>" />
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("Facebook Profile"); ?></th>
+					<th scope="row">Facebook Profile</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/facebook.png" alt="Facebook" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[fb_url]" value="<?php esc_attr_e($options["fb_url"]); ?>" />
-						<label class="description"><?php _e("Full URL to your profile"); ?></label>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/facebook.png" alt="Facebook" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[fb_url]" value="<?php echo esc_attr($options["fb_url"]); ?>" />
+						<label class="description">Full URL to your profile</label>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("Google+ URL"); ?></th>
+					<th scope="row">Google+ URL</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/google-plus.png" alt="Google+" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[google_url]" value="<?php esc_attr_e($options["google_url"]); ?>" />
-						<label class="description"><?php _e("Full URL to your profile"); ?></label>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/google-plus.png" alt="Google+" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[google_url]" value="<?php echo esc_attr($options["google_url"]); ?>" />
+						<label class="description">Full URL to your profile</label>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("LinkedIn Profile"); ?></th>
+					<th scope="row">LinkedIn Profile</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[linkedin_url]" value="<?php esc_attr_e($options["linkedin_url"]); ?>" />
-						<label class="description"><?php _e("Full URL to your profile"); ?></label>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[linkedin_url]" value="<?php echo esc_attr($options["linkedin_url"]); ?>" />
+						<label class="description">Full URL to your profile</label>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("Flickr ID"); ?></th>
+					<th scope="row">Flickr ID</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/flickr.png" alt="Flickr" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[flicker_id]" value="<?php esc_attr_e($options["flicker_id"]); ?>" />
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/flickr.png" alt="Flickr" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[flicker_id]" value="<?php echo esc_attr($options["flicker_id"]); ?>" />
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("YouTube ID"); ?></th>
+					<th scope="row">YouTube ID</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/youtube.png" alt="Youtube" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[youtube_id]" value="<?php esc_attr_e($options["youtube_id"]); ?>" />
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/youtube.png" alt="Youtube" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[youtube_id]" value="<?php echo esc_attr($options["youtube_id"]); ?>" />
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("Github ID"); ?></th>
+					<th scope="row">Github ID</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/github.png" alt="Github" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[github_id]" value="<?php esc_attr_e($options["github_id"]); ?>" />
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/github.png" alt="Github" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[github_id]" value="<?php echo esc_attr($options["github_id"]); ?>" />
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e("App.Net ID"); ?></th>
+					<th scope="row">App.Net ID</th>
 					<td>
-						<img src="<?php echo bloginfo("template_url"); ?>/images/social/37x37/app.net.png" alt="App.Net" class="social_icon" />
-						<input class="regular-text" type="text" name="metro_theme_options[app.net_id]" value="<?php esc_attr_e($options["app.net_id"]); ?>" />
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/app.net.png" alt="App.Net" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[app.net_id]" value="<?php echo esc_attr($options["app.net_id"]); ?>" />
 					</td>
 				</tr>
 				</table>
@@ -185,8 +183,8 @@ function metro_options_do_page()
 		</ul>
 
 		<p id="metro_options_submit" class="">
-			<input type="hidden" name="metro_theme_options[current_metro_form_page]" id="current_metro_form_page" value="<?php esc_attr_e($options["current_metro_form_page"]); ?>" />
-			<input type="submit" class="button-primary" value="<?php _e("Save Options"); ?>" />
+			<input type="hidden" name="metro_theme_options[current_metro_form_page]" id="current_metro_form_page" value="<?php echo esc_attr($options["current_metro_form_page"]); ?>" />
+			<input type="submit" class="button-primary" value="Save Options" />
 			<span>&laquo; Don't forget to save these options!</span>
 		</p>
 	</form>

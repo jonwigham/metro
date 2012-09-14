@@ -21,9 +21,6 @@ if (!function_exists("metro_setup"))
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style();
 
-		// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
-		add_theme_support("post-formats", array("aside", "gallery"));
-
 		// Add default posts and comments RSS feed links to head
 		add_theme_support("automatic-feed-links");
 
@@ -66,19 +63,15 @@ if (!function_exists("metro_posted_on"))
 {
 	function metro_posted_on()
 	{
-		printf(__('<p class="last"><span class="meta-prep meta-prep-author">Posted on</span> %1$s <span class="meta-sep">by</span> %2$s in %3$s</p>'),
-			sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-				get_permalink(),
-				esc_attr(get_the_time()),
-				get_the_date()
-			),
-			sprintf('<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-				get_author_posts_url(get_the_author_meta('ID')),
-				esc_attr(sprintf(__('View all posts by %s'), get_the_author())),
-				get_the_author()
-			),
-			get_the_category_list(", ")
-		);
+?>
+	<p class="last">
+		<span class="meta-prep meta-prep-author">Posted on</span>
+		<a href="<?php echo get_permalink(); ?>" title="<?php echo esc_attr(get_the_time()); ?>" rel="bookmark"><span class="entry-date"><?php echo get_the_date(); ?></span></a>
+		<span class="meta-sep">by</span>
+		<span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>" title="View all posts by <?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a></span>
+		<span class="meta-sep">in</span> <?php echo get_the_category_list(", "); ?>
+	</p>
+<?php
 	}
 }
 
@@ -94,10 +87,9 @@ if (!function_exists("metro_tag_links"))
 	{
 		if ($tags_list = get_the_tag_list('', ', '))
 		{
-			printf(__('<p class="last"><span class="%1$s">Tags: </span> %2$s</p>'),
-				'entry-utility-prep entry-utility-prep-tag-links',
-				$tags_list
-			);
+?>
+	<p class="last"><span class="entry-utility-prep entry-utility-prep-tag-links">Tags: </span> <?php echo $tags_list; ?></p>
+<?php
 		}
 	}
 }
@@ -112,7 +104,7 @@ if (!function_exists("metro_post_gravatar"))
 {
 	function metro_post_gravatar()
 	{
-		if ($author_email = get_the_author_email())
+		if ($author_email = get_the_author_meta("email"))
 		{
 			echo get_avatar($author_email, "40");
 		}
@@ -143,14 +135,14 @@ if (!function_exists("metro_comment"))
 
 	<?php if ($comment->user_id < 1): ?>
 		<div class="callout top-left theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
-			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
 		</div>
 	<?php endif; ?>
 
 		<div id="comment-<?php comment_ID(); ?>" class="comment theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
 
 			<?php if ($comment->comment_approved == "0"): ?>
-				<p class="align_center last"><em class="comment-awaiting-moderation"><?php _e("This comment is awaiting moderation."); ?></em></p>
+				<p class="align_center last"><em class="comment-awaiting-moderation">This comment is awaiting moderation.</em></p>
 			<?php endif; ?>
 
 			<div class="comment-author vcard">
@@ -160,15 +152,15 @@ if (!function_exists("metro_comment"))
 			<div class="comment-body"><?php comment_text(); ?></div>
 
 			<div class="comment-meta commentmetadata">
-				<?php printf(__('<span class="says">from</span> %s'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link())); ?>
-				<?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()); ?><?php edit_comment_link(__("(Edit)"), " "); ?>
+				<span class="says">from</span> <cite class="fn"><?php echo get_comment_author_link(); ?></cite>
+				<?php echo get_comment_date(); ?> at <?php echo get_comment_time(); ?> <?php edit_comment_link("(Edit)"); ?>
 			</div>
 
 		</div>
 
 	<?php if ($comment->user_id > 0): ?>
 		<div class="callout bottom-right theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
-			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-bottom-right.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-bottom-right.png" alt="&nbsp;" /></span>
 		</div>
 	<?php endif; ?>
 <?php
@@ -181,11 +173,11 @@ if (!function_exists("metro_comment"))
 		<div class="clear"></div>
 
 		<div class="callout top-left theme_background">
-			<span class="arrow"><img src="<?php bloginfo("template_url"); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
 		</div>
 
 		<div id="comment-<?php comment_ID(); ?>" class="comment theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
-			<p class="last"><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' ); ?></p>
+			<p class="last">Pingback <?php comment_author_link(); ?><?php edit_comment_link("(Edit)"); ?></p>
 		</div>
 <?php
 			break;
@@ -206,12 +198,12 @@ if (!function_exists("metro_comment_navigation"))
 		if (get_comment_pages_count() > 1 && get_option("page_comments"))
 		{
 ?>
-			<div class="navigation <?php echo $location; ?>">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'twentyten' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?></div>
-				<div class="clear"></div>
-				<div class="padding_20"></div>
-			</div>
+	<div class="navigation <?php echo $location; ?>">
+		<div class="nav-previous"><?php previous_comments_link('<span class="meta-nav">&larr;</span> Older Comments'); ?></div>
+		<div class="nav-next"><?php next_comments_link('Newer Comments <span class="meta-nav">&rarr;</span>'); ?></div>
+		<div class="clear"></div>
+		<div class="padding_20"></div>
+	</div>
 <?php
 		}
 	}
@@ -225,42 +217,24 @@ if (!function_exists("metro_comment_navigation"))
  */
 function metro_comment_form($form_options)
 {
-	$label = "Name" . (($req) ? " (required)" : "");
-	$author  = '<p class="comment-form-author"><label>' . __($label) . '</label>';
-	$author .= '	<input id="author" name="author" type="text" value="' . esc_attr($commenter["comment_author"]) . '" size="30"' . $aria_req . ' class="field" />';
-	$author .= '</p>';
+	global $post_id;
 
-	$label = "Email" . (($req) ? " (required, will not be published)" : "");
-	$email  = '<p class="comment-form-email"><label>' . __($label) . '</label>';
-	$email .= '	<input id="email" name="email" type="text" value="' . esc_attr($commenter["comment_author_email"]) . '" size="30"' . $aria_req . ' class="field" />';
-	$email .= '</p>';
+	$user = wp_get_current_user();
+	$user_identity = !empty($user->ID) ? $user->display_name : "";
 
-	$label = "Website" . (($req) ? " (required)" : "");
-	$website  = '<p class="comment-form-url"><label>' . __($label) . '</label>';
-	$website .= '	<input id="url" name="url" type="text" value="' . esc_attr($commenter["comment_author_url"]) . '" size="30"' . $aria_req . ' class="field" />';
-	$website .= '</p>';
+	$author = '<p class="comment-form-author"><label>Name</label><input id="author" name="author" type="text" size="30" class="field" /></p>';
+	$email = '<p class="comment-form-email"><label>Email</label><input id="email" name="email" type="text" size="30" class="field" /></p>';
+	$website = '<p class="comment-form-url"><label>Website</label><input id="url" name="url" type="text" size="30" class="field" /></p>';
+	$comment = '<p class="comment-form-comment"><label>Comment</label><textarea name="comment" id="comment" rows="8" cols="45" class="field"></textarea></p>';
+
+	$logged_in = '<p class="must-log-in">You must be <a href="' . wp_login_url(apply_filters("the_permalink", get_permalink($post_id))) . '">logged in</a> to post a comment.</p>';
+	$logged_in_as = '<p class="logged-in-as secondary-color">Logged in as <a href="' . admin_url("profile.php") . '">' . $user_identity . '</a>. <a href="' . wp_logout_url(apply_filters("the_permalink", get_permalink($post_id))) . '" title="Log out of this account">Log out?</a></p>';
 
 	$fields = array(
 		"author" => $author,
 		"email" => $email,
 		"url" => $website
 	);
-
-
-	$label = "Comment" . (($req) ? " (required)" : "");
-	$comment  = '<p class="comment-form-comment"><label>' . __($label) . '</label>';
-	$comment .= '	<textarea name="comment" id="comment" rows="8" cols="45" class="field"></textarea>';
-	$comment .= '</p>';
-
-	$logged_in  = '<p class="must-log-in">';
-	$logged_in .= sprintf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url(apply_filters("the_permalink", get_permalink($post_id))));
-	$logged_in .= '</p>';
-
-	$user = wp_get_current_user();
-	$user_identity = ! empty( $user->ID ) ? $user->display_name : '';
-	$logged_in_as  = '<p class="logged-in-as secondary-color">';
-	$logged_in_as .= sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'), admin_url("profile.php"), $user_identity, wp_logout_url(apply_filters("the_permalink", get_permalink($post_id))));
-	$logged_in_as .= '</p>';
 
 	$form_options = array(
 		"fields" => apply_filters("comment_form_default_fields", $fields),
@@ -274,9 +248,9 @@ function metro_comment_form($form_options)
 
 		"id_form" => "form-comment",
 		"id_submit" => "submit-comment",
-		"title_reply" => __("leave your comment"),
-		"cancel_reply_link" => __("cancel"),
-		"label_submit" => __("submit"),
+		"title_reply" => "leave your comment",
+		"cancel_reply_link" => "cancel",
+		"label_submit" => "submit",
 	);
 
 	return $form_options;

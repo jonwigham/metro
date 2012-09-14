@@ -7,6 +7,7 @@
  * @since Metro 1.0
  */
 	$metro_options = get_option("metro_theme_options");
+	if (!isset($content_width)) $content_width = 900;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -26,17 +27,17 @@
 		if ($site_description && (is_home() || is_front_page())) echo " | {$site_description}";
 
 		// Add a page number if necessary:
-		if ($paged >= 2 || $page >= 2) echo " | " . sprintf(__('Page %s'), max($paged, $page));
+		if ($paged >= 2 || $page >= 2) echo " | " . 'Page ' . max($paged, $page);
 	?>
 	</title>
 
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo("pingback_url"); ?>" />
 
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("stylesheet_url"); ?>" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo("template_url"); ?>/styles/styles.php?theme=<?php echo $metro_options["css_theme"]; ?>&amp;accent=<?php echo $metro_options["css_accent_colour"]; ?>" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/styles/styles.php?theme=<?php echo $metro_options["css_theme"]; ?>&amp;accent=<?php echo $metro_options["css_accent_colour"]; ?>" />
 
-	<script type="text/JavaScript" src="<?php bloginfo("template_url"); ?>/scripts/scripts.php"></script>
+	<script type="text/JavaScript" src="<?php echo get_template_directory_uri(); ?>/scripts/scripts.php"></script>
 	<script type="text/JavaScript" src="https://s7.addthis.com/js/300/addthis_widget.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
 
@@ -71,36 +72,36 @@
 					<a href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
 				</div>
 				<div class="image theme_background">
-					<img src="<?php bloginfo("template_url"); ?>/images/guest.png" alt="Guest" />
+					<img src="<?php echo get_template_directory_uri(); ?>/images/guest.png" alt="Guest" />
 				</div>
 			<?php endif; ?>
 			</div>
 			<div id="social">
 				<ul>
-					<li><a href="<?php bloginfo("rss_url"); ?>" title="RSS" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/rss.png" alt="RSS" /></a></li>
+					<li><a href="<?php bloginfo("rss_url"); ?>" title="RSS" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/rss.png" alt="RSS" /></a></li>
 				<?php if ($metro_options["twitter_id"]): ?>
-					<li><a href="https://twitter.com/#!/<?php echo $metro_options["twitter_id"]; ?>" title="Twitter" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/twitter.png" alt="Twitter" /></a></li>
+					<li><a href="https://twitter.com/#!/<?php echo $metro_options["twitter_id"]; ?>" title="Twitter" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/twitter.png" alt="Twitter" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["fb_url"]): ?>
-					<li><a href="<?php echo $metro_options["fb_url"]; ?>" title="Facebook" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/facebook.png" alt="Facebook" /></a></li>
+					<li><a href="<?php echo $metro_options["fb_url"]; ?>" title="Facebook" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/facebook.png" alt="Facebook" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["google_url"]): ?>
-					<li><a href="<?php echo $metro_options["google_url"]; ?>" title="Google" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/google-plus.png" alt="Google+" /></a></li>
+					<li><a href="<?php echo $metro_options["google_url"]; ?>" title="Google" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/google-plus.png" alt="Google+" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["linkedin_url"]): ?>
-					<li><a href="<?php echo $metro_options["linkedin_url"]; ?>" title="LinkedIn" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" /></a></li>
+					<li><a href="<?php echo $metro_options["linkedin_url"]; ?>" title="LinkedIn" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["flicker_id"]): ?>
-					<li><a href="http://www.flickr.com/photos/<?php echo $metro_options["flicker_id"]; ?>" title="Flickr" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/flickr.png" alt="Flickr" /></a></li>
+					<li><a href="http://www.flickr.com/photos/<?php echo $metro_options["flicker_id"]; ?>" title="Flickr" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/flickr.png" alt="Flickr" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["youtube_id"]): ?>
-					<li><a href="https://www.youtube.com/user/<?php echo $metro_options["youtube_id"]; ?>" title="YouTube" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/youtube.png" alt="YouTube" /></a></li>
+					<li><a href="https://www.youtube.com/user/<?php echo $metro_options["youtube_id"]; ?>" title="YouTube" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/youtube.png" alt="YouTube" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["github_id"]): ?>
-					<li><a href="https://github.com/<?php echo $metro_options["github_id"]; ?>" title="Github" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/github.png" alt="Github" /></a></li>
+					<li><a href="https://github.com/<?php echo $metro_options["github_id"]; ?>" title="Github" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/github.png" alt="Github" /></a></li>
 				<?php endif; ?>
 				<?php if ($metro_options["app.net_id"]): ?>
-					<li><a href="https://alpha.app.net/<?php echo $metro_options["app.net_id"]; ?>" title="App.Net" rel="external"><img src="<?php bloginfo("template_url"); ?>/images/social/37x37/app.net.png" alt="App.Net" /></a></li>
+					<li><a href="https://alpha.app.net/<?php echo $metro_options["app.net_id"]; ?>" title="App.Net" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/app.net.png" alt="App.Net" /></a></li>
 				<?php endif; ?>
 				</ul>
 			</div>

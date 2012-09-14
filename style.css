@@ -1,10 +1,15 @@
 /*
-Theme Name: Metro UI
+Theme Name: Metro
 Theme URI: http://www.wordpress-metro-theme.co.uk
 Description: Theme based on Microsoft's Metro UI
 Author: Jon Wigham
+Author URI: http://www.routeofqueue.com
 Version: 1.0
-Tags: metro, ui, black, blue, white, two-columns, fixed-width, responsive-layout, threaded-comments, rtl-language-support, editor-style, custom-menu
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
+Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, flexible-width, custom-colors, full-width-template, theme-options, translation-ready
 */
 
 /* Nick broke it! */
+
+.wp-caption,.wp-caption-text,.sticky,.gallery-caption,.bypostauthor,.alignright,.alignleft,.aligncenter {}

@@ -45,7 +45,11 @@ class MetroCategoriesWidget extends WP_Widget_Categories
 		$class_name = "";
 		if ($category === end($categories)) $class_name .= "last";
 	?>
-		<li class="theme_background <?php echo $class_name; ?>"><a href="<?php echo get_category_link($category->term_id); ?>" title="<?php sprintf( __( "View all posts in %s" ), $category->name ); ?>"><span><?php echo $category->name; ?></span></a></li>
+		<li class="theme_background <?php echo $class_name; ?>">
+			<a href="<?php echo get_category_link($category->term_id); ?>" title="View all posts in <?php echo $category->name; ?>">
+				<span><?php echo $category->name; ?></span>
+			</a>
+		</li>
 	<?php
 		}
 	?>

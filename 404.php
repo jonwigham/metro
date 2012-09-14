@@ -12,7 +12,7 @@
 <div id="container"><div id="content">
 
 	<div class="post">
-		<h1 class="entry-title"><?php _e("Not Found"); ?></h1>
+		<h1 class="entry-title">Not Found</h1>
 		<div class="entry-content">
 			<p>Apologies, but the page you requested could not be found. Perhaps searching will help.</p>
 			<?php get_search_form(); ?>
