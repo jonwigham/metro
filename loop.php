@@ -39,9 +39,9 @@
 			<?php metro_post_gravatar(); ?>
 			<?php metro_posted_on(); ?>
 			<?php if (count(get_the_tag_list())): ?>
-				<span class="tag-links">
+				<div class="tag-links">
 					<?php metro_tag_links(); ?>
-				</span>
+				</div>
 			<?php endif; ?>
 
 			<div class="clear"></div>
