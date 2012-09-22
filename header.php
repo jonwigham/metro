@@ -35,11 +35,6 @@
 	<link rel="pingback" href="<?php bloginfo("pingback_url"); ?>" />
 
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/styles/styles.php?theme=<?php echo $metro_options["css_theme"]; ?>&amp;accent=<?php echo $metro_options["css_accent_colour"]; ?>" />
-
-	<script type="text/JavaScript" src="<?php echo get_template_directory_uri(); ?>/scripts/scripts.php"></script>
-	<script type="text/JavaScript" src="https://s7.addthis.com/js/300/addthis_widget.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
 
 <?php
 	if (is_singular() && get_option('thread_comments')) wp_enqueue_script("comment-reply");

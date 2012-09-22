@@ -11,12 +11,20 @@ require_once(get_template_directory() . "/theme-options.php");
 // Load up the widgets
 require_once("theme-widgets.php");
 
-// Tell WordPress to run metro_setup() when the 'after_setup_theme' hook is run
-add_action("after_setup_theme", "metro_setup");
-
+/**
+ * Tell WordPress to run metro_setup() when the 'after_setup_theme' hook is run
+ */
 if (!function_exists("metro_setup"))
 {
-	function metro_setup() {
+	function metro_setup()
+	{
+
+		$metro_options = get_option("metro_theme_options");
+		wp_enqueue_style("metro", get_stylesheet_directory_uri() . "/styles/styles.php?theme=" . $metro_options["css_theme"] . "&amp;accent=" . $metro_options["css_accent_colour"]);
+
+		wp_enqueue_script("addThis", "https://s7.addthis.com/js/300/addthis_widget.js");
+		wp_enqueue_script("metro", get_stylesheet_directory_uri() . "/scripts/scripts.php");
+		wp_enqueue_script("prototype_cdn", "https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js");
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style();
@@ -30,6 +38,23 @@ if (!function_exists("metro_setup"))
 		));
 	}
 }
+add_action("after_setup_theme", "metro_setup");
+
+
+/**
+ * Admin options - we don't want the site's CSS/JS loading up in the admin CP
+ */
+if (!function_exists("metro_admin_init"))
+{
+	function metro_admin_init()
+	{
+		wp_deregister_style("metro");
+		wp_deregister_script("addThis");
+		wp_deregister_script("metro");
+		wp_deregister_script("prototype_cdn");
+	}
+}
+add_action("admin_init", "metro_admin_init");
 
 
 /**
@@ -38,19 +63,22 @@ if (!function_exists("metro_setup"))
  * @since Twenty Ten 1.0
  * @uses register_sidebar
  */
-function metro_widgets_init() {
-	// Area 1 - sidebar.
-	register_sidebar( array(
-		"name" => "Primary Widget Area",
-		"id" => "primary-widget-area",
-		"description" => "The primary widget area",
-		"before_widget" => '<li id="%1$s" class="widget-container %2$s">',
-		"after_widget" => "</li>",
-		"before_title" => '<h4 class="widget-title">',
-		"after_title" => "</h4>",
-	) );
+if (!function_exists("metro_widgets_init"))
+{
+	function metro_widgets_init()
+	{
+		// Area 1 - sidebar.
+		register_sidebar(array(
+			"name" => "Primary Widget Area",
+			"id" => "primary-widget-area",
+			"description" => "The primary widget area",
+			"before_widget" => '<li id="%1$s" class="widget-container %2$s">',
+			"after_widget" => "</li>",
+			"before_title" => '<h4 class="widget-title">',
+			"after_title" => "</h4>",
+		) );
+	}
 }
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
 add_action("widgets_init", "metro_widgets_init");
 
 

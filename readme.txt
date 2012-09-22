@@ -25,5 +25,14 @@ You can then create a menu (via the "Menus" interface) and use it for the "Prima
 
 == Changelog ==
 
+= 1.0.3 = 
+* Fixed the enqueuing of the 3rd party CDN scripts
+
+= 1.0.2 =
+* Prevent the Site's CSS/JS interfering with the Admin section
+
+= 1.0.1 =
+* Updated to use wp_enqueue_script and wp_enqueue_style instead of hard coding the assets in the header
+
 = 1.0 =
 * Initial build/commit
