@@ -116,6 +116,7 @@ function metro_options_do_page()
 			<li id="content_social" class="metro_content <?php if ($options["current_metro_form_page"] != "tab_social") echo "hidden"; ?>">
 
 				<h3>The social media accounts you link to here will appear as icons across the top of the site</h3>
+				<p>We recommend not using more than 7 of these at once as the top of your site will get pretty cluttered!</p>
 
 				<table class="form-table">
 				<tr valign="top">
@@ -175,6 +176,27 @@ function metro_options_do_page()
 					<td>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/app.net.png" alt="App.Net" class="social_icon" />
 						<input class="regular-text" type="text" name="metro_theme_options[app.net_id]" value="<?php echo esc_attr($options["app.net_id"]); ?>" />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row">Steam ID</th>
+					<td>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/steam.png" alt="Steam" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[steam_id]" value="<?php echo esc_attr($options["steam_id"]); ?>" />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row">PSN ID</th>
+					<td>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/psn.png" alt="Playstation Network" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[psn_id]" value="<?php echo esc_attr($options["psn_id"]); ?>" />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row">XBOX Profile URL</th>
+					<td>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/xbox.png" alt="XBOX Live" class="social_icon" />
+						<input class="regular-text" type="text" name="metro_theme_options[xbox_url]" value="<?php echo esc_attr($options["xbox_url"]); ?>" />
 					</td>
 				</tr>
 				</table>

@@ -98,6 +98,15 @@
 				<?php if ($metro_options["app.net_id"]): ?>
 					<li><a href="https://alpha.app.net/<?php echo $metro_options["app.net_id"]; ?>" title="App.Net" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/app.net.png" alt="App.Net" /></a></li>
 				<?php endif; ?>
+				<?php if ($metro_options["steam_id"]): ?>
+					<li><a href="http://steamcommunity.com/id/<?php echo $metro_options["steam_id"]; ?>" title="Steam" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/steam.png" alt="Steam" /></a></li>
+				<?php endif; ?>
+				<?php if ($metro_options["psn_id"]): ?>
+					<li><a href="http://us.playstation.com/publictrophy/index.htm?onlinename=<?php echo $metro_options["psn_id"]; ?>" title="Playstation Network" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/psn.png" alt="Playstation Network" /></a></li>
+				<?php endif; ?>
+				<?php if ($metro_options["xbox_url"]): ?>
+					<li><a href="<?php echo $metro_options["xbox_gamertag"]; ?>" title="XBOX Live" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/xbox.png" alt="XBOX Live" /></a></li>
+				<?php endif; ?>
 				</ul>
 			</div>
 		</div>

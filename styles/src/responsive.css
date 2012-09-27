@@ -121,3 +121,11 @@
 	 	}
 	
 }
+
+@media (max-width: 360px) {
+
+	#social {
+		display: none;
+		}
+	
+}
