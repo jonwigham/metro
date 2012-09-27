@@ -104,8 +104,8 @@
 				<?php if ($metro_options["psn_id"]): ?>
 					<li><a href="http://us.playstation.com/publictrophy/index.htm?onlinename=<?php echo $metro_options["psn_id"]; ?>" title="Playstation Network" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/psn.png" alt="Playstation Network" /></a></li>
 				<?php endif; ?>
-				<?php if ($metro_options["xbox_url"]): ?>
-					<li><a href="<?php echo $metro_options["xbox_gamertag"]; ?>" title="XBOX Live" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/xbox.png" alt="XBOX Live" /></a></li>
+				<?php if ($metro_options["xbox_gamertag"]): ?>
+					<li><a href="http://live.xbox.com/Profile?GamerTag=<?php echo $metro_options["xbox_gamertag"]; ?>" title="XBOX Live" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/xbox.png" alt="XBOX Live" /></a></li>
 				<?php endif; ?>
 				</ul>
 			</div>
