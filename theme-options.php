@@ -197,6 +197,7 @@ function metro_options_do_page()
 					<td>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/xbox.png" alt="XBOX Live" class="social_icon" />
 						<input class="regular-text" type="text" name="metro_theme_options[xbox_url]" value="<?php echo esc_attr($options["xbox_url"]); ?>" />
+						<label class="description">Full URL to your profile</label>
 					</td>
 				</tr>
 				</table>
