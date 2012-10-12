@@ -1,7 +1,14 @@
 <?php
-	header("Content-type: text/JavaScript");
+/**
+ * The template for displaying Category Archive pages
+ *
+ * @package Metro
+ * @since Metro 1.0
+ */
 
-	$template_path = str_replace("/scripts/scripts.php", "", $_SERVER["PHP_SELF"]);
+header("Content-type: text/JavaScript");
 
-	$scripts = array("main", "addThis", "menu");
-	foreach ($scripts as $file) require_once("src/{$file}.js");
+$template_path = str_replace("/scripts/scripts.php", "", $_SERVER["PHP_SELF"]);
+
+$scripts = array("main", "addThis", "menu");
+foreach ($scripts as $file) require_once("src/{$file}.js");

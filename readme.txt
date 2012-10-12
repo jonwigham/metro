@@ -1,4 +1,4 @@
-=== Wordpress Metro Theme ===
+=== WordPress Metro Theme ===
 Contributors: ChiefWigs1982
 Tags: dark, light, one-column, two-columns, flexible-width, custom-colors, full-width-template, theme-options, translation-ready
 Requires at least: 3.0
@@ -25,13 +25,16 @@ You can then create a menu (via the "Menus" interface) and use it for the "Prima
 
 == Changelog ==
 
-= 1.0.3 = 
+= 1.3.0 = 
+* Coding style updates to meet the WP directory standards
+
+= 1.2.0 = 
 * Fixed the enqueuing of the 3rd party CDN scripts
 
-= 1.0.2 =
+= 1.1.1 =
 * Prevent the Site's CSS/JS interfering with the Admin section
 
-= 1.0.1 =
+= 1.1.0 =
 * Updated to use wp_enqueue_script and wp_enqueue_style instead of hard coding the assets in the header
 
 = 1.0 =

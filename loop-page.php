@@ -2,8 +2,7 @@
 /**
  * The loop that displays a page
  *
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 ?>

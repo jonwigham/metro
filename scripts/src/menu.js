@@ -2,7 +2,7 @@ addOnLoad(function() {
 
 	$$("li.widget-container ul li").each(function(el) {
 
-		if ($(el).up("li").id.indexOf("categories") == 0) return;
+		if ($(el).up("li").id == "category_tiles") return;
 
 		var span = document.createElement("SPAN");
 		span.innerHTML = el.innerHTML;

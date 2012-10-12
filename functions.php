@@ -1,7 +1,6 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 
@@ -18,13 +17,12 @@ if (!function_exists("metro_setup"))
 {
 	function metro_setup()
 	{
-
 		$metro_options = get_option("metro_theme_options");
-		wp_enqueue_style("metro", get_stylesheet_directory_uri() . "/styles/styles.php?theme=" . $metro_options["css_theme"] . "&amp;accent=" . $metro_options["css_accent_colour"]);
+		wp_enqueue_style("metro_main", get_stylesheet_directory_uri() . "/styles/styles.php?theme=" . esc_attr($metro_options["css_theme"]) . "&amp;accent=" . esc_attr($metro_options["css_accent_colour"]));
 
-		wp_enqueue_script("addThis", "https://s7.addthis.com/js/300/addthis_widget.js");
-		wp_enqueue_script("metro", get_stylesheet_directory_uri() . "/scripts/scripts.php");
-		wp_enqueue_script("prototype_cdn", "https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js");
+		wp_enqueue_script("metro_addThis", "https://s7.addthis.com/js/300/addthis_widget.js");
+		wp_enqueue_script("metro_main", get_stylesheet_directory_uri() . "/scripts/scripts.php");
+		wp_enqueue_script("metro_prototype_cdn", "https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js");
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style();
@@ -48,10 +46,10 @@ if (!function_exists("metro_admin_init"))
 {
 	function metro_admin_init()
 	{
-		wp_deregister_style("metro");
-		wp_deregister_script("addThis");
-		wp_deregister_script("metro");
-		wp_deregister_script("prototype_cdn");
+		wp_deregister_style("metro_main");
+		wp_deregister_script("metro_addThis");
+		wp_deregister_script("metro_main");
+		wp_deregister_script("metro_prototype_cdn");
 	}
 }
 add_action("admin_init", "metro_admin_init");
@@ -59,9 +57,6 @@ add_action("admin_init", "metro_admin_init");
 
 /**
  * Register widgetized areas
- *
- * @since Twenty Ten 1.0
- * @uses register_sidebar
  */
 if (!function_exists("metro_widgets_init"))
 {
@@ -82,10 +77,38 @@ if (!function_exists("metro_widgets_init"))
 add_action("widgets_init", "metro_widgets_init");
 
 
+
+/**
+ * Add a filter to the wp_title function so we can expand the contents of it
+ */
+if (!function_exists("metro_filter_wp_title"))
+{
+	function metro_filter_wp_title($title)
+	{
+		global $page, $paged;
+		$filtered_title = "";
+
+		// Add the blog name.
+		$site_name = get_bloginfo("name");
+		$filtered_title = $site_name . $title;
+
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo("description", "display");
+		if ($site_description && (is_home() || is_front_page())) $filtered_title .= " | " . $site_description;
+
+		// Add a page number if necessary:
+		if ($paged >= 2 || $page >= 2) $filtered_title .= " | " . 'Page ' . max($paged, $page);
+
+		// Return the modified title
+		return $filtered_title;
+	}
+}
+add_filter("wp_title", "metro_filter_wp_title");
+
+
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
- *
- * @since Metro 1.0
  */
 if (!function_exists("metro_posted_on"))
 {
@@ -106,8 +129,6 @@ if (!function_exists("metro_posted_on"))
 
 /**
  * Prints HTML with meta information for the post's categories
- *
- * @since Metro 1.0
  */
 if (!function_exists("metro_tag_links"))
 {
@@ -125,8 +146,6 @@ if (!function_exists("metro_tag_links"))
 
 /**
  * Print the post author's avatar for the post-meta
- *
- * @since Metro 1.0
  */
 if (!function_exists("metro_post_gravatar"))
 {
@@ -141,11 +160,7 @@ if (!function_exists("metro_post_gravatar"))
 
 
 /**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Metro 1.0
+ * Template for comments and pingbacks - used as a callback by wp_list_comments() for displaying the comments.
  */
 if (!function_exists("metro_comment"))
 {
@@ -163,7 +178,7 @@ if (!function_exists("metro_comment"))
 
 	<?php if ($comment->user_id < 1): ?>
 		<div class="callout top-left theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
-			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo (esc_attr($metro_options["css_theme"]) != "") ? esc_attr($metro_options["css_theme"]) : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
 		</div>
 	<?php endif; ?>
 
@@ -188,7 +203,7 @@ if (!function_exists("metro_comment"))
 
 	<?php if ($comment->user_id > 0): ?>
 		<div class="callout bottom-right theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
-			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-bottom-right.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo (esc_attr($metro_options["css_theme"]) != "") ? esc_attr($metro_options["css_theme"]) : "light"; ?>/callout-arrow-bottom-right.png" alt="&nbsp;" /></span>
 		</div>
 	<?php endif; ?>
 <?php
@@ -201,7 +216,7 @@ if (!function_exists("metro_comment"))
 		<div class="clear"></div>
 
 		<div class="callout top-left theme_background">
-			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
+			<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo (esc_attr($metro_options["css_theme"]) != "") ? esc_attr($metro_options["css_theme"]) : "light"; ?>/callout-arrow-top-left.png" alt="&nbsp;" /></span>
 		</div>
 
 		<div id="comment-<?php comment_ID(); ?>" class="comment theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
@@ -216,8 +231,6 @@ if (!function_exists("metro_comment"))
 
 /**
  * Print the post author's avatar for the post-meta
- *
- * @since Metro 1.0
  */
 if (!function_exists("metro_comment_navigation"))
 {
@@ -240,8 +253,6 @@ if (!function_exists("metro_comment_navigation"))
 
 /**
  * Formatted comments form
- *
- * @since Metro 1.0
  */
 function metro_comment_form($form_options)
 {

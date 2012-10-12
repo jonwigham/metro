@@ -2,8 +2,7 @@
 /**
  * The Template for displaying all single posts
  *
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 ?>

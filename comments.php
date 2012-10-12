@@ -2,8 +2,7 @@
 /**
  * The template for comments
  *
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 ?>

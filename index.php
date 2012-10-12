@@ -2,8 +2,7 @@
 /**
  * The main template file.
  *
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 ?>

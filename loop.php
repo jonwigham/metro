@@ -2,8 +2,7 @@
 /**
  * The loop that displays posts.
  *
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 	$metro_options = get_option("metro_theme_options");
@@ -47,11 +46,11 @@
 			<div class="clear"></div>
 			<div class="post_options open">
 
-				<script type="text/JavaScript">
-				/* <![CDATA[ */
-					outputAddThis("social_news_<?php the_ID(); ?>", "<?php the_permalink(); ?>", "<?php the_title(); ?>");
-				/* ]]> */
-				</script>
+				<div class="post_social_container hidden">
+					<div class="id">social_news_<?php the_ID(); ?></div>
+					<div class="link"><?php the_permalink(); ?></div>
+					<div class="title"><?php the_title(); ?></div>
+				</div>
 
 				<ul class="last hidden">
 					<li class="last"><?php edit_post_link("Edit post"); ?></li>
@@ -63,7 +62,7 @@
 <?php if (!is_singular() && $post->comment_status == "open"): ?>
 	<div class="comments-callout callout theme_background bottom-left">
 		<?php comments_popup_link("0", "1", "%"); ?>
-		<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo ($metro_options["css_theme"] != "") ? $metro_options["css_theme"] : "light"; ?>/callout-arrow-bottom-left.png" alt="&nbsp;" /></span>
+		<span class="arrow"><img src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo (esc_attr($metro_options["css_theme"]) != "") ? esc_attr($metro_options["css_theme"]) : "light"; ?>/callout-arrow-bottom-left.png" alt="&nbsp;" /></span>
 	</div>
 <?php endif; ?>
 	<div class="clear"></div>

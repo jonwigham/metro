@@ -22,4 +22,4 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7a { color: #{FONT_COLOUR}; }
 
 #sidebar ul li ul li span.arrow { background-image: url("{TEMPLATE_PATH}/images/themes/{THEME_COLOUR}/arrow.png"); }
 
-#sidebar #categories ul li a { border: 1px solid #{BG_COLOUR}; }
+#sidebar #category_tiles ul li a { border: 1px solid #{BG_COLOUR}; }

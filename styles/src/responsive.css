@@ -68,12 +68,12 @@
 		width: 100%;
 		}
 
-		#sidebar #categories ul  {
+		#sidebar #category_tiles ul  {
 			text-align: center;
 			margin: 0 10%;
 			}
 
-			#sidebar #categories ul li  {
+			#sidebar #category_tiles ul li  {
 				display: inline-block;
 				float: none;
 				text-align: left;

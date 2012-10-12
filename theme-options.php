@@ -1,7 +1,8 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Metro
+ * Admin section for the theme
+ *
+ * @package Metro
  * @since Metro 1.0
  */
 
@@ -30,11 +31,11 @@ function metro_options_add_page()
  */
 function metro_options_assets()
 {
-	wp_enqueue_script("prototype", "//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js");
-	wp_enqueue_script("jscolor", get_stylesheet_directory_uri() . "/scripts/admin/jscolor/jscolor.js");
-	wp_enqueue_script("admin", get_stylesheet_directory_uri() . "/scripts/admin/admin.js");
+	wp_enqueue_script("metro_prototype_cdn", "https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js");
+	wp_enqueue_script("metro_jscolor", get_stylesheet_directory_uri() . "/scripts/admin/jscolor/jscolor.js");
+	wp_enqueue_script("metro_admin", get_stylesheet_directory_uri() . "/scripts/admin/admin.js");
 
-	wp_enqueue_style("admin", get_stylesheet_directory_uri() . "/styles/admin/admin.css");
+	wp_enqueue_style("metro_admin", get_stylesheet_directory_uri() . "/styles/admin/admin.css");
 }
 
 /**
@@ -215,20 +216,25 @@ function metro_options_do_page()
 }
 
 /**
-* Sanitize and validate input. Accepts an array, return a sanitized array.
+* Sanitize and validate input
 */
 function metro_options_validate($input)
 {
-	global $select_options, $radio_options;
-
 	$input["twitter_id"] = wp_filter_nohtml_kses($input["twitter_id"]);
+	$input["fb_url"] = wp_filter_nohtml_kses($input["fb_url"]);
+	$input["google_url"] = wp_filter_nohtml_kses($input["google_url"]);
+	$input["linkedin_url"] = wp_filter_nohtml_kses($input["linkedin_url"]);
 	$input["flicker_id"] = wp_filter_nohtml_kses($input["flicker_id"]);
 	$input["youtube_id"] = wp_filter_nohtml_kses($input["youtube_id"]);
 	$input["github_id"] = wp_filter_nohtml_kses($input["github_id"]);
-	$input["fb_url"] = wp_filter_nohtml_kses($input["fb_url"]);
-	$input["linkedin_url"] = wp_filter_nohtml_kses($input["linkedin_url"]);
+	$input["app.net_id"] = wp_filter_nohtml_kses($input["app.net_id"]);
+	$input["steam_id"] = wp_filter_nohtml_kses($input["steam_id"]);
+	$input["psn_id"] = wp_filter_nohtml_kses($input["psn_id"]);
+	$input["xbox_gamertag"] = wp_filter_nohtml_kses($input["xbox_gamertag"]);
 
+	$input["css_theme"] = wp_filter_nohtml_kses($input["css_theme"]);
 	$input["css_accent_colour"] = wp_filter_nohtml_kses($input["css_accent_colour"]);
+	$input["current_metro_form_page"] = wp_filter_nohtml_kses($input["current_metro_form_page"]);
 
 	return $input;
 }

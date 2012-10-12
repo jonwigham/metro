@@ -2,8 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 ?>

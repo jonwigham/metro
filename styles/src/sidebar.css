@@ -49,22 +49,22 @@
 		}
 
 
-/* Boxes for the categories */
-#sidebar #categories {
+/* Boxes for the category_tiles */
+#sidebar #category_tiles {
 	border-bottom: 1px solid transparent;
 	}
 
-	#sidebar #categories ul {
+	#sidebar #category_tiles ul {
 		margin: 0;
 		padding: 0;
 		}
 
-		#sidebar #categories ul li {
+		#sidebar #category_tiles ul li {
 			float: left;
 			margin: 0 10px 10px 0;
 			}
 
-		#sidebar #categories ul li a {
+		#sidebar #category_tiles ul li a {
 			display: block;
 			width: 80px;
 			height: 80px;
@@ -73,11 +73,11 @@
 			overflow: hidden;
 			}
 
-			#sidebar #categories ul li a:hover {
+			#sidebar #category_tiles ul li a:hover {
 				text-decoration: none;
 				}
 
-		#sidebar #categories ul li a span {
+		#sidebar #category_tiles ul li a span {
 			position: absolute;
 			padding-left: 0;
 			bottom: 10px;

@@ -2,8 +2,7 @@
 /**
  * The Sidebar containing the primary and secondary widget areas.
  *
- * @package WordPress
- * @subpackage Metro
+ * @package Metro
  * @since Metro 1.0
  */
 ?>

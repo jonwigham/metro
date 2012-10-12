@@ -1,15 +1,10 @@
 <?php
-
 /**
- * Sack off all the default widgets so we can create our own
+ * Extended widgets for the themes
+ *
+ * @package Metro
+ * @since Metro 1.0
  */
-if (!function_exists("metro_unregister_default_wp_widgets")) {
-	function metro_unregister_default_wp_widgets() {
-		unregister_widget("WP_Widget_Categories");
-	}
-	add_action("widgets_init", "metro_unregister_default_wp_widgets", 1);
-}
-
 
 /**
  * Display a list of the categories as Tiles
@@ -18,7 +13,7 @@ class MetroCategoriesWidget extends WP_Widget_Categories
 {
 	public function __construct()
 	{
-		parent::WP_Widget(false, "Categories", "description=List of categories that will be styled like Metro Tiles");
+		parent::WP_Widget(false, "* Metro Category Tiles", "description=List of categories that will be styled like Metro Tiles");
 	}
 
 	public function form($instance)
@@ -35,15 +30,15 @@ class MetroCategoriesWidget extends WP_Widget_Categories
 	public function widget($args, $instance)
 	{
 		?>
-<li id="categories" class="widget-container">
+<li id="category_tiles" class="widget-container">
 	<ul>
 	<?php
 		$args = array("orderby" => "name", "order" => "ASC");
 		$categories = get_categories($args);
 		foreach ($categories as $category)
 		{
-		$class_name = "";
-		if ($category === end($categories)) $class_name .= "last";
+			$class_name = "";
+			if ($category === end($categories)) $class_name .= "last";
 	?>
 		<li class="theme_background <?php echo $class_name; ?>">
 			<a href="<?php echo get_category_link($category->term_id); ?>" title="View all posts in <?php echo $category->name; ?>">

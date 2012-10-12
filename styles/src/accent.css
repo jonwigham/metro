@@ -12,6 +12,6 @@
 #masthead,
 .entry-meta img.avatar,
 .post blockquote,
-#sidebar #categories ul li a:hover,
+#sidebar #category_tiles ul li a:hover,
 #searchform input,
 #social { border-color: #{COLOUR}; }
