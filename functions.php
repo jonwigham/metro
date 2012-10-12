@@ -227,7 +227,7 @@ if (!function_exists("metro_comment"))
 			<div class="comment-meta commentmetadata">
 			<?php
 				printf(
-					__('<span class="%1$s">from</span> <cite class="%2$s">%3$s</cite> %4$s at %5$s', "metro"),
+					__('<span class="%1$s">from</span> <cite class="%2$s">%3$s</cite> %4$s at %5$s ', "metro"),
 					"says",
 					"fn",
 					get_comment_author_link(),
@@ -303,7 +303,7 @@ function metro_comment_form($form_options)
 	$author = '<p class="comment-form-author"><label>' . __("Name", "metro") . '</label><input id="author" name="author" type="text" size="30" class="field" /></p>';
 	$email = '<p class="comment-form-email"><label>' . __("Email", "metro") . '</label><input id="email" name="email" type="text" size="30" class="field" /></p>';
 	$website = '<p class="comment-form-url"><label>' . __("Website", "metro") . '</label><input id="url" name="url" type="text" size="30" class="field" /></p>';
-	$comment = '<p class="comment-form-comment"><label' . __("Comment", "metro") . '</label><textarea name="comment" id="comment" rows="8" cols="45" class="field"></textarea></p>';
+	$comment = '<p class="comment-form-comment"><label>' . __("Comment", "metro") . '</label><textarea name="comment" id="comment" rows="8" cols="45" class="field"></textarea></p>';
 
 	$logged_in = sprintf(
 		__('<p class="%1$s">You must be <a href="%2$s">logged in</a> to post a comment.</p>', "metro"),

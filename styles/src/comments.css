@@ -64,3 +64,7 @@
 	#comments_form form .field.inactive {
 		color: #888888;
 		}
+
+.comment-body {
+	padding-left: 50px;
+	}
