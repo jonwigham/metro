@@ -24,6 +24,10 @@
 		overflow: scroll;
 		}
 
+	.post img, #main .page img {
+		max-width: 100%;
+		}
+
 .comments-callout {
 	float: left;
 	width: 40px;
