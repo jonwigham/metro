@@ -9,7 +9,7 @@
 ?>
 
 <form method="get" id="searchform" action="<?php echo home_url("/"); ?>">
-	<h4 class="widget-title">Search this site</h4>
+	<h4 class="widget-title"><?php _e("Search this site", "metro"); ?></h4>
 	<div>
 		<input type="text" value="" name="s" id="s" />
 		<span><input type="image" src="<?php echo get_template_directory_uri(); ?>/images/themes/<?php echo (esc_attr($metro_options["css_theme"]) != "") ? esc_attr($metro_options["css_theme"]) : "light"; ?>/search.png" alt="Go &raquo;" class="submit" /></span>

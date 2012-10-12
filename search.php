@@ -11,14 +11,14 @@
 <div id="container"><div id="content">
 
 <?php if (have_posts()): ?>
-	<h1 class="page-title">Search Results</h1>
-	<p>Your search for "<?php echo get_search_query(); ?>" returned the following results:</p>
+	<h1 class="page-title"><?php _e("Search Results", "metro"); ?></h1>
+	<p><?php printf(__('Your search for "%1$s" returned the following results:', "metro"), get_search_query()); ?></p>
 	<?php get_template_part("loop"); ?>
 <?php else : ?>
 	<div class="post no-results not-found">
 		<div class="entry-content">
-			<h1 class="page-title">Search Results</h1>
-			<p>Sorry, but nothing matched your search for "<?php echo get_search_query(); ?>". Please try again with some different keywords.</p>
+			<h1 class="page-title"><?php _e("Search Results", "metro"); ?></h1>
+			<p><?php printf(__('Sorry, but nothing matched your search for "%1$s". Please try again with some different keywords.', "metro"), get_search_query()); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 	</div>

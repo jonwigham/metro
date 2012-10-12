@@ -9,14 +9,14 @@
 
 <?php if (post_password_required()): ?>
 <div id="comments">
-	<p class="nopassword">This post is password protected. Enter the password to view any comments</p>
+	<p class="nopassword"><?php echo _e("This post is password protected. Enter the password to view any comments.", "metro"); ?></p>
 </div>
 <?php return; endif; ?>
 
 <div id="comments">
 
 <?php if (have_comments()): ?>
-	<h3 id="comments-title"><?php printf(_n('One Response to %2$s', '%1$s Responses to %2$s', get_comments_number()), number_format_i18n(get_comments_number()), "<em>" . get_the_title() . "</em>"); ?></h3>
+	<h3 id="comments-title"><?php printf(_n(__('One Response to %2$s', "metro"), __('%1$s Responses to %2$s', "metro"), get_comments_number()), number_format_i18n(get_comments_number()), "<em>" . get_the_title() . "</em>"); ?></h3>
 
 	<?php metro_comment_navigation("top"); ?>
 	<ol class="commentlist">
@@ -25,7 +25,7 @@
 	<?php metro_comment_navigation("bottom"); ?>
 
 <?php elseif (!comments_open()): ?>
-	<p class="nocomments">Comments are closed.</p>
+	<p class="nocomments"><?php echo _e("Comments are closed.", "metro"); ?></p>
 <?php endif; ?>
 
 	<div id="comments_form">

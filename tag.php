@@ -10,7 +10,7 @@
 
 <div id="container"><div id="content">
 
-	<h1 class="page-title">Tag Archives: <span><?php echo single_tag_title("", false); ?></span></h1>
+	<h1 class="page-title"><?php _e("Tag Archives", "metro"); ?>: <span><?php echo single_tag_title("", false); ?></span></h1>
 	<?php get_template_part("loop"); ?>
 
 </div></div>

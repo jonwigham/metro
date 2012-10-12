@@ -4,11 +4,21 @@
  * @since Metro 1.0
  */
 
-// Metro options
-require_once(get_template_directory() . "/theme-options.php");
+/**
+ * Smash up some language files
+ */
+load_theme_textdomain("metro", get_template_directory() . "/languages");
+$locale = get_locale();
+$locale_file = get_template_directory() . "/languages/{$locale}.php";
+if (is_readable($locale_file)) require_once($locale_file);
 
-// Load up the widgets
+
+/**
+ * Include the options and widgets
+ */
+require_once(get_template_directory() . "/theme-options.php");
 require_once("theme-widgets.php");
+
 
 /**
  * Tell WordPress to run metro_setup() when the 'after_setup_theme' hook is run
@@ -64,9 +74,9 @@ if (!function_exists("metro_widgets_init"))
 	{
 		// Area 1 - sidebar.
 		register_sidebar(array(
-			"name" => "Primary Widget Area",
+			"name" => __("Primary widget area", "metro"),
 			"id" => "primary-widget-area",
-			"description" => "The primary widget area",
+			"description" => __("The primary widget area", "metro"),
 			"before_widget" => '<li id="%1$s" class="widget-container %2$s">',
 			"after_widget" => "</li>",
 			"before_title" => '<h4 class="widget-title">',
@@ -97,7 +107,7 @@ if (!function_exists("metro_filter_wp_title"))
 		if ($site_description && (is_home() || is_front_page())) $filtered_title .= " | " . $site_description;
 
 		// Add a page number if necessary:
-		if ($paged >= 2 || $page >= 2) $filtered_title .= " | " . 'Page ' . max($paged, $page);
+		if ($paged >= 2 || $page >= 2) $filtered_title .= " | " . __("Page ", "metro") . max($paged, $page);
 
 		// Return the modified title
 		return $filtered_title;
@@ -116,11 +126,31 @@ if (!function_exists("metro_posted_on"))
 	{
 ?>
 	<p class="last">
-		<span class="meta-prep meta-prep-author">Posted on</span>
-		<a href="<?php echo get_permalink(); ?>" title="<?php echo esc_attr(get_the_time()); ?>" rel="bookmark"><span class="entry-date"><?php echo get_the_date(); ?></span></a>
-		<span class="meta-sep">by</span>
-		<span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>" title="View all posts by <?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a></span>
-		<span class="meta-sep">in</span> <?php echo get_the_category_list(", "); ?>
+		<?php
+			printf(
+				__('<span class="%1$s">Posted on</span> %2$s <span class="%3$s">by</span> %4$s <span class="%5$s">in</span> %6$s', "metro"),
+				"meta-prep meta-prep-author",
+				sprintf(
+					'<a href="%1$s" title="%2$s" rel="%3$s"><span class="%4$s">%5$s</span></a>',
+					get_permalink(),
+					esc_attr(get_the_time()),
+					"bookmark",
+					"entry-date",
+					get_the_date()
+				),
+				"meta-sep",
+				sprintf(
+					'<span class="%1$s"><a class="%2$s" href="%3$s" title="View all posts by %4$s">%5$s</a></span>',
+					"author vcard",
+					"url fn n",
+					get_author_posts_url(get_the_author_meta("ID")),
+					get_the_author(),
+					get_the_author()
+				),
+				"meta-sep",
+				get_the_category_list(", ")
+			);
+		?>
 	</p>
 <?php
 	}
@@ -137,7 +167,7 @@ if (!function_exists("metro_tag_links"))
 		if ($tags_list = get_the_tag_list('', ', '))
 		{
 ?>
-	<p class="last"><span class="entry-utility-prep entry-utility-prep-tag-links">Tags: </span> <?php echo $tags_list; ?></p>
+	<p class="last"><span class="entry-utility-prep entry-utility-prep-tag-links"><?php echo _e("Tags", "metro"); ?>: </span> <?php echo $tags_list; ?></p>
 <?php
 		}
 	}
@@ -185,7 +215,7 @@ if (!function_exists("metro_comment"))
 		<div id="comment-<?php comment_ID(); ?>" class="comment theme_background<?php if ($comment->user_id > 0) echo "_dark"; ?>">
 
 			<?php if ($comment->comment_approved == "0"): ?>
-				<p class="align_center last"><em class="comment-awaiting-moderation">This comment is awaiting moderation.</em></p>
+				<p class="align_center last"><em class="comment-awaiting-moderation"><?php _e("This comment is awaiting moderation.", "metro"); ?></em></p>
 			<?php endif; ?>
 
 			<div class="comment-author vcard">
@@ -195,8 +225,17 @@ if (!function_exists("metro_comment"))
 			<div class="comment-body"><?php comment_text(); ?></div>
 
 			<div class="comment-meta commentmetadata">
-				<span class="says">from</span> <cite class="fn"><?php echo get_comment_author_link(); ?></cite>
-				<?php echo get_comment_date(); ?> at <?php echo get_comment_time(); ?> <?php edit_comment_link("(Edit)"); ?>
+			<?php
+				printf(
+					__('<span class="%1$s">from</span> <cite class="%2$s">%3$s</cite> %4$s at %5$s', "metro"),
+					"says",
+					"fn",
+					get_comment_author_link(),
+					get_comment_date(),
+					get_comment_time()
+				);
+				edit_comment_link(__("(Edit)", "metro"));
+			?>
 			</div>
 
 		</div>
@@ -240,8 +279,8 @@ if (!function_exists("metro_comment_navigation"))
 		{
 ?>
 	<div class="navigation <?php echo $location; ?>">
-		<div class="nav-previous"><?php previous_comments_link('<span class="meta-nav">&larr;</span> Older Comments'); ?></div>
-		<div class="nav-next"><?php next_comments_link('Newer Comments <span class="meta-nav">&rarr;</span>'); ?></div>
+		<div class="nav-previous"><?php previous_comments_link('<span class="meta-nav">&larr;</span> ' . __("Older Comments", "metro")); ?></div>
+		<div class="nav-next"><?php next_comments_link(__("Newer Comments", "metro") . ' <span class="meta-nav">&rarr;</span>'); ?></div>
 		<div class="clear"></div>
 		<div class="padding_20"></div>
 	</div>
@@ -261,13 +300,23 @@ function metro_comment_form($form_options)
 	$user = wp_get_current_user();
 	$user_identity = !empty($user->ID) ? $user->display_name : "";
 
-	$author = '<p class="comment-form-author"><label>Name</label><input id="author" name="author" type="text" size="30" class="field" /></p>';
-	$email = '<p class="comment-form-email"><label>Email</label><input id="email" name="email" type="text" size="30" class="field" /></p>';
-	$website = '<p class="comment-form-url"><label>Website</label><input id="url" name="url" type="text" size="30" class="field" /></p>';
-	$comment = '<p class="comment-form-comment"><label>Comment</label><textarea name="comment" id="comment" rows="8" cols="45" class="field"></textarea></p>';
+	$author = '<p class="comment-form-author"><label>' . __("Name", "metro") . '</label><input id="author" name="author" type="text" size="30" class="field" /></p>';
+	$email = '<p class="comment-form-email"><label>' . __("Email", "metro") . '</label><input id="email" name="email" type="text" size="30" class="field" /></p>';
+	$website = '<p class="comment-form-url"><label>' . __("Website", "metro") . '</label><input id="url" name="url" type="text" size="30" class="field" /></p>';
+	$comment = '<p class="comment-form-comment"><label' . __("Comment", "metro") . '</label><textarea name="comment" id="comment" rows="8" cols="45" class="field"></textarea></p>';
 
-	$logged_in = '<p class="must-log-in">You must be <a href="' . wp_login_url(apply_filters("the_permalink", get_permalink($post_id))) . '">logged in</a> to post a comment.</p>';
-	$logged_in_as = '<p class="logged-in-as secondary-color">Logged in as <a href="' . admin_url("profile.php") . '">' . $user_identity . '</a>. <a href="' . wp_logout_url(apply_filters("the_permalink", get_permalink($post_id))) . '" title="Log out of this account">Log out?</a></p>';
+	$logged_in = sprintf(
+		__('<p class="%1$s">You must be <a href="%2$s">logged in</a> to post a comment.</p>', "metro"),
+		"must-log-in",
+		wp_login_url(apply_filters("the_permalink", get_permalink($post_id)))
+	);
+	$logged_in_as = sprintf(
+		__('<p class="%1$s">Logged in as <a href="%2$s">%3$s</a>. <a href="%4$s" title="Log out of this account">Log out?</a></p>', "metro"),
+		"logged-in-as secondary-color",
+		admin_url("profile.php"),
+		$user_identity,
+		wp_logout_url(apply_filters("the_permalink", get_permalink($post_id)))
+	);
 
 	$fields = array(
 		"author" => $author,

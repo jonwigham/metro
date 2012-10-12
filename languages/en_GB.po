@@ -1,0 +1,348 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jon Wigham <jon.wigham@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. Text in function
+#: comments.php:19
+msgid "%1$s Responses to %2$s"
+msgstr "%1$s Responses to %2$s"
+
+#. Text in function
+#: functions.php:228
+msgid "(Edit)"
+msgstr "(Edit)"
+
+#. Text in echo
+#: theme-options.php:96
+msgid "6 character hex, please!"
+msgstr "6 character hex, please!"
+
+#. Text in function
+#: functions.php:129
+msgid ""
+"<span class=\"%1$s\">Posted on</span> %2$s <span class=\"%3$s\">by</span> "
+"%4$s <span class=\"%5$s\">in</span> %6$s"
+msgstr ""
+"<span class=\"%1$s\">Posted on</span> %2$s <span class=\"%3$s\">by</span> "
+"%4$s <span class=\"%5$s\">in</span> %6$s"
+
+#. Text in function
+#: functions.php:228
+msgid ""
+"<span class=\"%1$s\">from</span> <cite class=\"%2$s\">%3$s</cite> %4$s at "
+"%5$s"
+msgstr ""
+"<span class=\"%1$s\">from</span> <cite class=\"%2$s\">%3$s</cite> %4$s at "
+"%5$s"
+
+#. Text in echo
+#: theme-options.php:102
+msgid "A few suggested colours - click to choose one"
+msgstr "A few suggested colours - click to choose one"
+
+#. Text in echo
+#: theme-options.php:93
+msgid "Accent Colour"
+msgstr "Accent Colour"
+
+#. Text in echo
+#: header.php:43
+msgid "Admin"
+msgstr "Admin"
+
+#. Text in echo
+#: footer.php:19
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+#. Text in echo
+#: author.php:15
+msgid "Author Archives"
+msgstr "Author Archives"
+
+#. Text in echo
+#: archive.php:22
+msgid "Blog Archives"
+msgstr "Blog Archives"
+
+#. Text in echo
+#: category.php:13
+msgid "Category Archives"
+msgstr "Category Archives"
+
+#. Text in echo
+#: theme-options.php:75
+msgid "Choose your favourite shade and colour to make your theme your own!"
+msgstr "Choose your favourite shade and colour to make your theme your own!"
+
+#. Text in echo
+#: comments.php:28
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#. Text in echo
+#: archive.php:16
+msgid "Daily Archives"
+msgstr "Daily Archives"
+
+#. Text in echo
+#: theme-options.php:86
+msgid "Dark"
+msgstr "Dark"
+
+#. Text in echo
+#: theme-options.php:211
+msgid "Don't forget to save these options!"
+msgstr "Don't forget to save these options!"
+
+#. Text in function
+#: loop.php:57
+msgid "Edit post"
+msgstr "Edit post"
+
+#. Text in echo
+#: theme-options.php:151
+msgid "Full URL to your profile"
+msgstr "Full URL to your profile"
+
+#. Text in echo
+#: theme-options.php:83
+msgid "Light"
+msgstr "Light"
+
+#. Text in function
+#: theme-widgets.php:54
+msgid "List of categories that will be styled like Metro Tiles"
+msgstr "List of categories that will be styled like Metro Tiles"
+
+#. Text in echo
+#: header.php:51
+msgid "Login"
+msgstr "Login"
+
+#. Text in echo
+#: header.php:43
+msgid "Logout"
+msgstr "Logout"
+
+#. Text in function
+#: theme-options.php:215
+msgid "Metro Theme Options"
+msgstr "Metro Theme Options"
+
+#. Text in function
+#: footer.php:20
+msgid "Metro Theme created by %1$s."
+msgstr "Metro Theme created by %1$s."
+
+#. Text in echo
+#: archive.php:18
+msgid "Monthly Archives"
+msgstr "Monthly Archives"
+
+#. Text in function
+#: functions.php:283
+msgid "Newer Comments"
+msgstr "Newer Comments"
+
+#. Text in function
+#: loop.php:78
+msgid "Newer posts"
+msgstr "Newer posts"
+
+#. Text in echo
+#: loop.php:13 404.php:14
+msgid "Not Found"
+msgstr "Not Found"
+
+#. Text in function
+#: functions.php:282
+msgid "Older Comments"
+msgstr "Older Comments"
+
+#. Text in function
+#: loop.php:77
+msgid "Older posts"
+msgstr "Older posts"
+
+#. Text in function
+#: comments.php:19
+msgid "One Response to %2$s"
+msgstr "One Response to %2$s"
+
+#. Text in echo
+#: theme-options.php:53
+msgid "Options saved"
+msgstr "Options saved"
+
+#. Text in function
+#: functions.php:287
+msgid "Page "
+msgstr "Page "
+
+#. Text in function
+#: loop.php:34
+msgid "Pages:"
+msgstr "Pages:"
+
+#. Text in function
+#: functions.php:287
+msgid "Primary widget area"
+msgstr "Primary widget area"
+
+#. Text in function
+#: footer.php:21
+msgid "Proudly powered by %1$s."
+msgstr "Proudly powered by %1$s."
+
+#. Text in function
+#: loop.php:33
+msgid "Read more"
+msgstr "Read more"
+
+#. Text in echo
+#: sidebar.php:86
+msgid "Recent comments"
+msgstr "Recent comments"
+
+#. Text in echo
+#: sidebar.php:50
+msgid "Recent posts"
+msgstr "Recent posts"
+
+#. Text in echo
+#: theme-options.php:210
+msgid "Save Options"
+msgstr "Save Options"
+
+#. Text in echo
+#: search.php:14 search.php:20
+msgid "Search Results"
+msgstr "Search Results"
+
+#. Text in echo
+#: searchform.php:12
+msgid "Search this site"
+msgstr "Search this site"
+
+#. Text in echo
+#: theme-options.php:70
+msgid "Social Media"
+msgstr "Social Media"
+
+#. Text in echo
+#: loop.php:15
+msgid "Sorry, but no results were found for the requested archive."
+msgstr "Sorry, but no results were found for the requested archive."
+
+#. Text in function
+#: search.php:21
+msgid ""
+"Sorry, but nothing matched your search for \"%1$s\". Please try again with "
+"some different keywords."
+msgstr ""
+"Sorry, but nothing matched your search for \"%1$s\". Please try again with "
+"some different keywords."
+
+#. Text in echo
+#: 404.php:16
+msgid "Sorry, but the page you requested could not be found."
+msgstr "Sorry, but the page you requested could not be found."
+
+#. Text in echo
+#: tag.php:13
+msgid "Tag Archives"
+msgstr "Tag Archives"
+
+#. Text in echo
+#: functions.php:170
+msgid "Tags"
+msgstr "Tags"
+
+#. Text in function
+#: functions.php:287
+msgid "The primary widget area"
+msgstr "The primary widget area"
+
+#. Text in echo
+#: theme-options.php:119
+msgid ""
+"The social media accounts you link to here will appear as icons across the "
+"top of the site"
+msgstr ""
+"The social media accounts you link to here will appear as icons across the "
+"top of the site"
+
+#. Text in echo
+#: theme-options.php:80
+msgid "Theme"
+msgstr "Theme"
+
+#. Text in echo
+#: theme-options.php:69
+msgid "Theme Colours"
+msgstr "Theme Colours"
+
+#. Text in function
+#: theme-options.php:50
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#. Text in echo
+#: functions.php:218
+msgid "This comment is awaiting moderation."
+msgstr "This comment is awaiting moderation."
+
+#. Text in echo
+#: comments.php:12
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"This post is password protected. Enter the password to view any comments."
+
+#. Text in echo
+#: loop.php:16 404.php:17
+msgid "Try searching for something else instead..."
+msgstr "Try searching for something else instead..."
+
+#. Text in echo
+#: theme-widgets.php:44
+msgid "View all posts in"
+msgstr "View all posts in"
+
+#. Text in echo
+#: theme-options.php:120
+msgid ""
+"We recommend not using more than 7 of these at once as the top of your site "
+"will get pretty cluttered!"
+msgstr ""
+"We recommend not using more than 7 of these at once as the top of your site "
+"will get pretty cluttered!"
+
+#. Text in echo
+#: header.php:42
+msgid "Welcome"
+msgstr "Welcome"
+
+#. Text in echo
+#: header.php:50
+msgid "Welcome, guest!"
+msgstr "Welcome, guest!"
+
+#. Text in echo
+#: archive.php:20
+msgid "Yearly Archives"
+msgstr "Yearly Archives"
+
+#. Text in function
+#: search.php:15
+msgid "Your search for \"%1$s\" returned the following results:"
+msgstr "Your search for \"%1$s\" returned the following results:"

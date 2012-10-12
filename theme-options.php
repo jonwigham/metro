@@ -22,7 +22,7 @@ function metro_options_init()
  */
 function metro_options_add_page()
 {
-	$page = add_theme_page("Metro Theme Options", "Metro Theme Options", "edit_theme_options", "metro_options", "metro_options_do_page");
+	$page = add_theme_page(__("Metro Theme Options", "metro"), __("Metro Theme Options", "metro"), "edit_theme_options", "metro_options", "metro_options_do_page");
 	add_action("admin_print_scripts-{$page}", "metro_options_assets");
 }
 
@@ -47,10 +47,10 @@ function metro_options_do_page()
 ?>
 
 <div class="wrap">
-<?php screen_icon(); echo "<h2>" . get_current_theme() . "Theme Options" . "</h2>"; ?>
+<?php screen_icon(); echo "<h2>" . get_current_theme() . __("Theme Options", "metro") . "</h2>"; ?>
 
 <?php if (false !== $_REQUEST["settings-updated"]): ?>
-	<div class="updated fade"><p><strong>Options saved</strong></p></div>
+	<div class="updated fade"><p><strong><?php _e("Options saved", "metro"); ?></strong></p></div>
 <?php endif; ?>
 
 	<form method="post" action="options.php">
@@ -66,40 +66,40 @@ function metro_options_do_page()
 		?>
 
 		<ul id="metro_tabs">
-			<li id="tab_colours" class="<?php if ($options["current_metro_form_page"] == "tab_colours") echo "item_active"; ?>">Theme Colours</li>
-			<li id="tab_social" class="<?php if ($options["current_metro_form_page"] == "tab_social") echo "item_active"; ?>">Social Media</li>
+			<li id="tab_colours" class="<?php if ($options["current_metro_form_page"] == "tab_colours") echo "item_active"; ?>"><?php _e("Theme Colours", "metro"); ?></li>
+			<li id="tab_social" class="<?php if ($options["current_metro_form_page"] == "tab_social") echo "item_active"; ?>"><?php _e("Social Media", "metro"); ?></li>
 		</ul>
 		<ul id="metro_content">
 			<li id="content_colours" class="metro_content <?php if ($options["current_metro_form_page"] != "tab_colours") echo "hidden"; ?>">
 
-				<h3>Choose your favourite shade and colour to make your theme your own!</h3>
+				<h3><?php echo _e("Choose your favourite shade and colour to make your theme your own!", "metro"); ?></h3>
 
 				<table class="form-table">
 				<tr id="metro_theme_option" valign="top">
 					<th scope="row">
-						Theme
+						<?php _e("Theme", "metro"); ?>
 					</th>
 					<td class="answer narrow">
-						<a href="javascript:;" onclick="setMetroOption(this, 'light');"><img src="<?php echo get_template_directory_uri(); ?>/images/admin/theme-light.png" alt="Light" class="<?php echo ($options["css_theme"] == "light") ? "img_active" : ""; ?>" /></a>
+						<a href="javascript:;" onclick="setMetroOption(this, 'light');"><img src="<?php echo get_template_directory_uri(); ?>/images/admin/theme-light.png" alt="<?php _e("Light", "metro"); ?>" class="<?php echo ($options["css_theme"] == "light") ? "img_active" : ""; ?>" /></a>
 					</td>
 					<td class="answer narrow">
-						<a href="javascript:;" onclick="setMetroOption(this, 'dark');"><img src="<?php echo get_template_directory_uri(); ?>/images/admin/theme-dark.png" alt="Dark" class="<?php echo ($options["css_theme"] == "dark") ? "img_active" : ""; ?>" /></a>
+						<a href="javascript:;" onclick="setMetroOption(this, 'dark');"><img src="<?php echo get_template_directory_uri(); ?>/images/admin/theme-dark.png" alt="<?php _e("Dark", "metro"); ?>" class="<?php echo ($options["css_theme"] == "dark") ? "img_active" : ""; ?>" /></a>
 					</td>
 					<td class="other">
 						<input type="hidden" name="metro_theme_options[css_theme]" class="row_answer" value="<?php echo $options["css_theme"]; ?>" />
 					</td>
 				</tr>
 				<tr id="metro_accent_option" valign="top">
-					<th scope="row">Accent Colour</th>
+					<th scope="row"><?php _e("Accent Colour", "metro"); ?></th>
 					<td colspan="3">
 						<input class="regular-text color" id="metro_accent_colour" type="text" name="metro_theme_options[css_accent_colour]" value="<?php echo esc_attr($options["css_accent_colour"]); ?>" />
-						<label class="description">6 character hex, please!</label>
+						<label class="description"><?php _e("6 character hex, please!", "metro"); ?></label>
 					</td>
 				</tr>
 				<tr id="metro_accent_suggestions">
 					<th>&nbsp;</th>
 					<td colspan="3">
-						<p class="note_title">A few suggested colours - click to choose one</p>
+						<p class="note_title"><?php _e("A few suggested colours - click to choose one", "metro"); ?></p>
 						<ul id="suggested_colours">
 							<li><span>f3972b</span></li>
 							<li><span>1ba1e2</span></li>
@@ -116,8 +116,8 @@ function metro_options_do_page()
 			</li>
 			<li id="content_social" class="metro_content <?php if ($options["current_metro_form_page"] != "tab_social") echo "hidden"; ?>">
 
-				<h3>The social media accounts you link to here will appear as icons across the top of the site</h3>
-				<p>We recommend not using more than 7 of these at once as the top of your site will get pretty cluttered!</p>
+				<h3><?php _e("The social media accounts you link to here will appear as icons across the top of the site", "metro"); ?></h3>
+				<p><?php _e("We recommend not using more than 7 of these at once as the top of your site will get pretty cluttered!", "metro"); ?></p>
 
 				<table class="form-table">
 				<tr valign="top">
@@ -132,7 +132,7 @@ function metro_options_do_page()
 					<td>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/facebook.png" alt="Facebook" class="social_icon" />
 						<input class="regular-text" type="text" name="metro_theme_options[fb_url]" value="<?php echo esc_attr($options["fb_url"]); ?>" />
-						<label class="description">Full URL to your profile</label>
+						<label class="description"><?php _e("Full URL to your profile", "metro"); ?></label>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -140,7 +140,7 @@ function metro_options_do_page()
 					<td>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/google-plus.png" alt="Google+" class="social_icon" />
 						<input class="regular-text" type="text" name="metro_theme_options[google_url]" value="<?php echo esc_attr($options["google_url"]); ?>" />
-						<label class="description">Full URL to your profile</label>
+						<label class="description"><?php _e("Full URL to your profile", "metro"); ?></label>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -148,7 +148,7 @@ function metro_options_do_page()
 					<td>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/social/37x37/linkedin.png" alt="LinkedIn" class="social_icon" />
 						<input class="regular-text" type="text" name="metro_theme_options[linkedin_url]" value="<?php echo esc_attr($options["linkedin_url"]); ?>" />
-						<label class="description">Full URL to your profile</label>
+						<label class="description"><?php _e("Full URL to your profile", "metro"); ?></label>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -207,8 +207,8 @@ function metro_options_do_page()
 
 		<p id="metro_options_submit" class="">
 			<input type="hidden" name="metro_theme_options[current_metro_form_page]" id="current_metro_form_page" value="<?php echo esc_attr($options["current_metro_form_page"]); ?>" />
-			<input type="submit" class="button-primary" value="Save Options" />
-			<span>&laquo; Don't forget to save these options!</span>
+			<input type="submit" class="button-primary" value="<?php _e("Save Options", "metro"); ?>" />
+			<span>&laquo; <?php _e("Don't forget to save these options!", "metro"); ?></span>
 		</p>
 	</form>
 </div>

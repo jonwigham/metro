@@ -13,13 +13,13 @@
 	<?php if (have_posts()) the_post(); ?>
 	<h1 class="page-title">
 	<?php if (is_day()): ?>
-		Daily Archives: <span><?php echo get_the_date(); ?></span>
+		<?php echo _e("Daily Archives", "metro"); ?>: <span><?php echo get_the_date(); ?></span>
 	<?php elseif (is_month()): ?>
-		Monthly Archives: <span><?php echo get_the_date("F Y"); ?></span>
+		<?php echo _e("Monthly Archives", "metro"); ?>: <span><?php echo get_the_date("F Y"); ?></span>
 	<?php elseif (is_year()): ?>
-		Yearly Archives: <span><?php echo get_the_date("Y"); ?></span>
+		<?php echo _e("Yearly Archives", "metro"); ?>: <span><?php echo get_the_date("Y"); ?></span>
 	<?php else: ?>
-		Blog Archives
+		<?php echo _e("Blog Archives", "metro"); ?>
 	<?php endif; ?>
 	</h1>
 

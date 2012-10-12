@@ -13,7 +13,7 @@ class MetroCategoriesWidget extends WP_Widget_Categories
 {
 	public function __construct()
 	{
-		parent::WP_Widget(false, "* Metro Category Tiles", "description=List of categories that will be styled like Metro Tiles");
+		parent::WP_Widget(false, "* Metro Category Tiles", "description=" . __("List of categories that will be styled like Metro Tiles", "metro"));
 	}
 
 	public function form($instance)
@@ -41,7 +41,7 @@ class MetroCategoriesWidget extends WP_Widget_Categories
 			if ($category === end($categories)) $class_name .= "last";
 	?>
 		<li class="theme_background <?php echo $class_name; ?>">
-			<a href="<?php echo get_category_link($category->term_id); ?>" title="View all posts in <?php echo $category->name; ?>">
+			<a href="<?php echo get_category_link($category->term_id); ?>" title="<?php _e("View all posts in", "metro"); ?> <?php echo $category->name; ?>">
 				<span><?php echo $category->name; ?></span>
 			</a>
 		</li>

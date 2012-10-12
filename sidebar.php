@@ -47,7 +47,7 @@
 	{
 ?>
 	<li id="recent_posts" class="widget-container bullets">
-		<h4 class="widget-title">Recent posts</h4>
+		<h4 class="widget-title"><?php _e("Recent posts", "metro"); ?></h4>
 		<ul>
 		<?php
 			foreach ($recent_posts as $recent_post)
@@ -83,7 +83,7 @@
 	{
 ?>
 	<li id="recent_comments" class="widget-container bullets">
-		<h4 class="widget-title">Recent comments</h4>
+		<h4 class="widget-title"><?php _e("Recent comments", "metro"); ?></h4>
 		<ul>
 		<?php
 			foreach ($recent_comments as $recent_comment)
@@ -108,6 +108,6 @@
 	}
 ?>
 
-<?php endif; // end primary widget area ?>
+<?php endif; ?>
 	</ul>
 </div>

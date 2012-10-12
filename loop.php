@@ -10,9 +10,10 @@
 
 <?php if (!have_posts()): ?>
 	<div class="post error404 not-found">
-		<h1 class="entry-title">Not Found</h1>
+		<h1 class="entry-title"><?php _e("Not Found", "metro"); ?></h1>
 		<div class="entry-content">
-			<p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.</p>
+			<p><?php echo _e("Sorry, but no results were found for the requested archive.", "metro"); ?></p>
+			<p><?php echo _e("Try searching for something else instead...", "metro"); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 		<div class="padding_40"></div>
@@ -29,8 +30,8 @@
 		</div>
 	<?php else: ?>
 		<div class="entry-content">
-			<?php the_content("Read more &raquo;"); ?>
-			<?php wp_link_pages( array("before" => '<div class="page-link">' . "Pages:", "after" => "</div>")); ?>
+			<?php the_content(__("Read more", "metro") ." &raquo;"); ?>
+			<?php wp_link_pages( array("before" => '<div class="page-link">' . __("Pages:", "metro"), "after" => "</div>")); ?>
 		</div>
 	<?php endif; ?>
 		<div class="padding_10"></div>
@@ -53,7 +54,7 @@
 				</div>
 
 				<ul class="last hidden">
-					<li class="last"><?php edit_post_link("Edit post"); ?></li>
+					<li class="last"><?php edit_post_link(__("Edit post", "metro")); ?></li>
 				</ul>
 			</div>
 		</div>
@@ -73,8 +74,8 @@
 
 <?php if ($wp_query->max_num_pages > 1): ?>
 	<div id="nav-below" class="navigation">
-		<div class="nav nav-previous"><?php next_posts_link('<span class="meta-nav">&laquo;</span> Older posts'); ?></div>
-		<div class="nav nav-next"><?php previous_posts_link('Newer posts <span class="meta-nav">&raquo;</span>'); ?></div>
+		<div class="nav nav-previous"><?php next_posts_link('<span class="meta-nav">&laquo;</span> ' . __("Older posts", "metro")); ?></div>
+		<div class="nav nav-next"><?php previous_posts_link(__("Newer posts", "metro") . ' <span class="meta-nav">&raquo;</span>'); ?></div>
 		<div class="clear"></div>
 	</div>
 <?php endif; ?>

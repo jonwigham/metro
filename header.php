@@ -39,16 +39,16 @@
 					$user_identity = ! empty( $user->ID ) ? $user->display_name : '';
 				?>
 				<div class="text">
-					<span>Welcome <?php echo $user_identity; ?></span><br />
-					<a href="<?php echo get_admin_url(); ?>" title="Admin">Admin</a>&nbsp;|&nbsp;<a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout">Logout</a>
+					<span><?php _e("Welcome", "metro"); ?> <?php echo $user_identity; ?></span><br />
+					<a href="<?php echo get_admin_url(); ?>" title="Admin"><?php _e("Admin", "metro"); ?></a>&nbsp;|&nbsp;<a href="<?php echo wp_logout_url(home_url()); ?>" title="<?php _e("Logout", "metro"); ?>"><?php _e("Logout", "metro"); ?></a>
 				</div>
 				<div class="image theme_background">
 					<a href="<?php echo get_admin_url(); ?>" title="Admin"><?php echo get_avatar($current_user->user_email, "40"); ?></a>
 				</div>
 			<?php else: ?>
 				<div class="text">
-					Welcome, guest!<br />
-					<a href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
+					<?php _e("Welcome, guest!", "metro"); ?>!<br />
+					<a href="<?php echo wp_login_url(); ?>" title="Login"><?php _e("Login", "metro"); ?></a>
 				</div>
 				<div class="image theme_background">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/guest.png" alt="Guest" />

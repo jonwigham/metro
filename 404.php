@@ -11,9 +11,10 @@
 <div id="container"><div id="content">
 
 	<div class="post">
-		<h1 class="entry-title">Not Found</h1>
+		<h1 class="entry-title"><?php echo _e("Not Found", "metro"); ?></h1>
 		<div class="entry-content">
-			<p>Apologies, but the page you requested could not be found. Perhaps searching will help.</p>
+			<p><?php echo _e("Sorry, but the page you requested could not be found.", "metro"); ?></p>
+			<p><?php echo _e("Try searching for something else instead...", "metro"); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 	</div>
