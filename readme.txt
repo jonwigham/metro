@@ -25,6 +25,9 @@ You can then create a menu (via the "Menus" interface) and use it for the "Prima
 
 == Changelog ==
 
+= 1.4.0 = 
+* Added translation functionality
+
 = 1.3.0 = 
 * Coding style updates to meet the WP directory standards
 
