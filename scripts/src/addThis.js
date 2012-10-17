@@ -14,6 +14,12 @@ addOnLoad(function() {
 		el.innerHTML = str;
 		$(el).removeClassName("hidden");
 	});
+
+	var head = document.getElementsByTagName("head")[0];
+	var script = document.createElement("script");
+	script.type = "text/JavaScript";
+	script.src = "https://s7.addthis.com/js/300/addthis_widget.js";
+	head.appendChild(script);
 });
 
 var addthis_config = {

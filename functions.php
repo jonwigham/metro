@@ -30,7 +30,6 @@ if (!function_exists("metro_setup"))
 		$metro_options = get_option("metro_theme_options");
 		wp_enqueue_style("metro_main", get_stylesheet_directory_uri() . "/styles/styles.php?theme=" . esc_attr($metro_options["css_theme"]) . "&amp;accent=" . esc_attr($metro_options["css_accent_colour"]));
 
-		wp_enqueue_script("metro_addThis", "https://s7.addthis.com/js/300/addthis_widget.js");
 		wp_enqueue_script("metro_main", get_stylesheet_directory_uri() . "/scripts/scripts.php");
 		wp_enqueue_script("metro_prototype_cdn", "https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js");
 
