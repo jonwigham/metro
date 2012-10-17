@@ -56,7 +56,6 @@ if (!function_exists("metro_admin_init"))
 	function metro_admin_init()
 	{
 		wp_deregister_style("metro_main");
-		wp_deregister_script("metro_addThis");
 		wp_deregister_script("metro_main");
 		wp_deregister_script("metro_prototype_cdn");
 	}
