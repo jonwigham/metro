@@ -68,3 +68,8 @@
 .comment-body {
 	padding-left: 50px;
 	}
+
+#comments .comment a,
+#comments .pingback a { color: #ffffff; text-decoration: underline; }
+#comments .comment a:hover,
+#comments .pingback a:hover { text-decoration: none; }

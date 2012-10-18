@@ -13,11 +13,6 @@ body {
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7a { color: #{FONT_COLOUR}; }
 
-#comments .comment a,
-#comments .pingback a { color: #{BG_COLOUR}; text-decoration: underline; }
-#comments .comment a:hover,
-#comments .pingback a:hover { text-decoration: none; }
-
 .callout span.arrow { background-color: #{BG_COLOUR}; }
 
 #sidebar ul li ul li span.arrow { background-image: url("{TEMPLATE_PATH}/images/themes/{THEME_COLOUR}/arrow.png"); }

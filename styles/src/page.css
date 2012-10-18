@@ -28,6 +28,16 @@
 		max-width: 100%;
 		}
 
+	img.alignright {
+		float: right;
+		margin: 0 0 10px 10px;
+		}
+
+	img.alignleft {
+		float: left;
+		margin: 0 10px 10px 0;
+		}
+
 .comments-callout {
 	float: left;
 	width: 40px;
@@ -46,7 +56,9 @@
 
 
 
-.entry-meta {}
+.entry-meta {
+	clear: both;
+	}
 
 	.entry-meta img.avatar {
 		border: 1px solid #ffffff;
