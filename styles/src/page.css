@@ -7,7 +7,7 @@
 	}
 
 	.post blockquote, #main .page blockquote {
-		border-left: 10px solid #ffffff;
+		border-left: 5px solid #ffffff;
 		padding-left: 10px;
 		margin-bottom: 15px;
 		}
@@ -23,6 +23,33 @@
 		font-size: 12px;
 		overflow: scroll;
 		}
+
+	.post ol, #main .page ol {
+		list-style-type: decimal;
+		margin-left: 20px;
+		}
+
+	.post ul, #main .page ul {
+		list-style-type: none;
+		margin-left: 15px;
+		}
+
+		.post ul ul, #main .page ul ul {
+			padding-bottom: 0;
+			}
+
+		.post ul li, #main .page ul li {
+			position: relative;
+			}
+
+		.post ul li:before, #main .page ul li:before {
+			position: absolute;
+			margin: 7px 0 0 -12px;
+			width: 6px;
+			height: 6px;
+			background: #ffffff;
+			content: "";
+			}
 
 	.post img, #main .page img {
 		max-width: 100%;
@@ -81,6 +108,15 @@
 		text-align: center;
 		}
 
+	.post_options .social ul {
+		list-style-type: none;
+		}
+
+	.post_options .social ul li:before, #main .post_options .social ul li:before {
+		width: 0;
+		height: 0;
+		}
+
 		.post_options .social .addthis_toolbox li {
 			display: inline-block;
 			}
@@ -122,19 +158,19 @@
 
 .navigation {}
 
-	 .navigation .nav a {
-	 	display: block;
-	 	padding: 10px 40px;
-	 	margin: -20px 0 10px 0;
+	.navigation .nav a {
+		display: block;
+		padding: 10px 40px;
+		margin: -20px 0 10px 0;
 		background-color: #dddddd;
-	 	color: #444444;
-	 	}
+		color: #444444;
+		}
 
-	 .navigation .nav-previous {
-	 	float: left;
-	 	}
+	.navigation .nav-previous {
+		float: left;
+		}
 
-	 .navigation .nav-next {
-	 	float: right;
-	 	margin-right: 60px;
-	 	}
+	.navigation .nav-next {
+		float: right;
+		margin-right: 60px;
+		}

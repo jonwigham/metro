@@ -15,3 +15,7 @@
 #sidebar #category_tiles ul li a:hover,
 #searchform input,
 #social { border-color: #{COLOUR}; }
+
+.post ul li:before, #main .page ul li:before {
+	background: #{COLOUR};
+	}

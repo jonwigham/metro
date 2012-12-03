@@ -47,7 +47,7 @@
 				</div>
 			<?php else: ?>
 				<div class="text">
-					<?php _e("Welcome, guest!", "metro"); ?>!<br />
+					<?php _e("Welcome, guest!", "metro"); ?><br />
 					<a href="<?php echo wp_login_url(); ?>" title="Login"><?php _e("Login", "metro"); ?></a>
 				</div>
 				<div class="image theme_background">
