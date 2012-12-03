@@ -9,6 +9,7 @@
 <?php get_header(); ?>
 
 <div id="container"><div id="content">
+	<div class="padding_10"></div>
 
 	<?php get_template_part("loop", "page"); ?>
 

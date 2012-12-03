@@ -50,6 +50,7 @@ a { text-decoration: none; }
 h1, h2, h3, h4, h5, h6, h7 { font-family: "Segoe UI Light"; padding-bottom: 10px; }
 
 h1 { font-size: 40px; }
+h1.entry-title { font-size: 25px; }
 h2 { font-size: 16px; text-transform: uppercase; font-weight: bold; }
 h3 { font-size: 25px; }
 h4 { font-size: 16px; font-weight: bold; }

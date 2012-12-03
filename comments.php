@@ -24,12 +24,12 @@
 	</ol>
 	<?php metro_comment_navigation("bottom"); ?>
 
-<?php elseif (!comments_open()): ?>
-	<p class="nocomments"><?php echo _e("Comments are closed.", "metro"); ?></p>
-<?php endif; ?>
-
 	<div id="comments_form">
 		<?php comment_form(); ?>
 	</div>
+
+<?php elseif (!comments_open()): ?>
+	<?php /*<p class="nocomments"><?php echo _e("Comments are closed.", "metro"); ?></p>*/ ?>
+<?php endif; ?>
 
 </div>
