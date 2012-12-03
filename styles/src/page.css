@@ -60,6 +60,12 @@
 		margin: 0 0 10px 10px;
 		}
 
+	img.aligncenter {
+		clear: both;
+		display: block;
+		margin: 0 auto;
+		}
+
 	img.alignleft {
 		float: left;
 		margin: 0 10px 10px 0;
