@@ -28,8 +28,19 @@
 		<?php comment_form(); ?>
 	</div>
 
-<?php elseif (!comments_open()): ?>
-	<?php /*<p class="nocomments"><?php echo _e("Comments are closed.", "metro"); ?></p>*/ ?>
-<?php endif; ?>
+<?php else : // I.E. There are no Comments
+    if ( comments_open() ) : // Comments are open, but there are none yet
+        echo"<p>Be the first to write a comment.</p>";
+?>
+	<div id="comments_form">
+		<?php comment_form();?>
+	</div>
+<?php
+    else : // comments are closed
+        echo"<p class='nocomments'>Comments are closed.</p>";
+    endif;
+endif;
+ ?>
 
 </div>
+
