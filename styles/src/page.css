@@ -172,6 +172,10 @@
 		color: #444444;
 		}
 
+		.comment-nav.navigation .nav a {
+			margin: 0;
+			}
+
 	.navigation .nav-previous {
 		float: left;
 		}
@@ -180,3 +184,7 @@
 		float: right;
 		margin-right: 60px;
 		}
+
+		.comment-nav.navigation .nav-next {
+			margin-right: 0;
+			}

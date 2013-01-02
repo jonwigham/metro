@@ -34,7 +34,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 a img { border: none; }
 
 input { border: 1px solid #ededed; }
-	input.submit { border: none; }
+	input.submit,
+	.paypal-donations input { border: none; }
 
 
 /* =Fonts

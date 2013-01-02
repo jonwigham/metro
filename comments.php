@@ -23,13 +23,12 @@
 		<?php wp_list_comments(array("callback" => "metro_comment")); ?>
 	</ol>
 	<?php metro_comment_navigation("bottom"); ?>
+<?php endif; ?>
 
+<?php if (comments_open($post->ID)): ?>
+	<div class="padding_20"></div>
 	<div id="comments_form">
 		<?php comment_form(); ?>
 	</div>
-
-<?php elseif (!comments_open()): ?>
-	<?php /*<p class="nocomments"><?php echo _e("Comments are closed.", "metro"); ?></p>*/ ?>
 <?php endif; ?>
-
 </div>

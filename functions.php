@@ -276,11 +276,10 @@ if (!function_exists("metro_comment_navigation"))
 		if (get_comment_pages_count() > 1 && get_option("page_comments"))
 		{
 ?>
-	<div class="navigation <?php echo $location; ?>">
-		<div class="nav-previous"><?php previous_comments_link('<span class="meta-nav">&larr;</span> ' . __("Older Comments", "metro")); ?></div>
-		<div class="nav-next"><?php next_comments_link(__("Newer Comments", "metro") . ' <span class="meta-nav">&rarr;</span>'); ?></div>
+	<div class="comment-nav navigation <?php echo $location; ?>">
+		<div class="nav nav-previous"><?php previous_comments_link('<span class="meta-nav">&larr;</span> ' . __("Older Comments", "metro")); ?></div>
+		<div class="nav nav-next"><?php next_comments_link(__("Newer Comments", "metro") . ' <span class="meta-nav">&rarr;</span>'); ?></div>
 		<div class="clear"></div>
-		<div class="padding_20"></div>
 	</div>
 <?php
 		}
