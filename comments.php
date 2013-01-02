@@ -26,7 +26,6 @@
 <?php endif; ?>
 
 <?php if (comments_open($post->ID)): ?>
-	<div class="padding_20"></div>
 	<div id="comments_form">
 		<?php comment_form(); ?>
 	</div>
