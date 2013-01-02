@@ -25,6 +25,9 @@ You can then create a menu (via the "Menus" interface) and use it for the "Prima
 
 == Changelog ==
 
+= 1.4.3= 
+* Fixed a couple of bugs with the comments form and navigation
+
 = 1.4.2 = 
 * Added some new CSS to better control the alignment of lists and images in posts
 
