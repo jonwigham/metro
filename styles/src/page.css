@@ -54,6 +54,7 @@
 
 	.post img, #main .page img {
 		max-width: 100%;
+		height: auto;
 		}
 
 	img.alignright {
