@@ -2,7 +2,7 @@
 -------------------------------------------------------------- */
 
 .wrapper {
-	width: 960px;
+	max-width: 1600px;
 	margin: 0 auto;
 	}
 
@@ -11,12 +11,12 @@
 	}
 
 #container {
-	width: 620px;
+	width: 1240px;
 	float: left;
 	}
 
 #sidebar {
-	width: 280px;
+	width: 300px;
 	float: right;
 	}
 
