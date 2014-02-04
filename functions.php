@@ -225,7 +225,7 @@ if (!function_exists("metro_comment"))
 			<div class="comment-meta commentmetadata">
 			<?php
 				printf(
-					__('<span class="%1$s">from</span> <cite class="%2$s">%3$s</cite> %4$s at %5$s ', "metro"),
+					__('<span class="%1$s">from </span><cite class="%2$s">%3$s</cite> %4$s at %5$s ', "metro"),
 					"says",
 					"fn",
 					get_comment_author_link(),
