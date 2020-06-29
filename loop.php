@@ -38,7 +38,7 @@
 		<div class="entry-meta secondary-color">
 			<?php metro_post_gravatar(); ?>
 			<?php metro_posted_on(); ?>
-			<?php if (is_array(get_the_tag_list()) && count(get_the_tag_list())): ?>
+			<?php if (get_the_tag_list()): ?>
 				<div class="tag-links">
 					<?php metro_tag_links(); ?>
 				</div>
